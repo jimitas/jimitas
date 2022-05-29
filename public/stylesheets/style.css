@@ -60,6 +60,12 @@ img {
   margin: auto;
 }
 
+.medal {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+
 /* テキストボックス */
 #input_box,
 #text_box {
