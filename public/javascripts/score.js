@@ -46,8 +46,17 @@ function sendWrong() {
 function scoreWright() {
   score_field.innerHTML = "";
   score_point.innerText = score + "てん　";
-  var score_10 = parseInt(score / 10);
+  var score_100 = parseInt(score / 100);
+  var score_10 = parseInt((score % 100) / 10);
   var score_1 = score % 10;
+  for (let i = 0; i < score_100; i++) {
+    const div = document.createElement("div");
+    const img = document.createElement("img");
+    img.setAttribute("src", "../images/gold.png");
+    img.setAttribute("class", "gold");
+    div.appendChild(img);
+    score_field.appendChild(div);
+  }
   for (let i = 0; i < score_10; i++) {
     const div = document.createElement("div");
     const img = document.createElement("img");

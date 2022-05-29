@@ -66,6 +66,12 @@ img {
   margin: auto;
 }
 
+.gold {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
 /* テキストボックス */
 #input_box,
 #text_box {
