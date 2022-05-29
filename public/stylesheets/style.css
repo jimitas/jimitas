@@ -91,61 +91,60 @@ img {
   border-radius: 50%;
 }
 
-.kenban_black_area {
-  width: 960px;
-  display: flex;
-  z-index: 20;
-  position: fixed;
-  margin-left: 30px;
+.kenban,
+.ken_none {
+  width: 5.6vw;
 }
-.kenban_white_area {
-  width: 960px;
-  display: flex;
-}
+
 .kenban_white {
-  width: 60px;
+  height: 60vh;
   border: solid 1px black;
-  padding-top: 220px;
+  padding-top: 35vh;
 }
+
 .kenban_black {
-  width: 60px;
-  border: solid 1px white;
   background: #333; /*ボタン色*/
   color: #fff;
   padding-top: 20px;
+  height: 30vh;
+  border: solid 1px white;
+  z-index: 20;
 }
+
 .ken_none {
-  width: 60px;
   z-index: -1;
 }
+
 .kenban {
   text-align: center;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
   cursor: pointer;
 }
-.div:hover {
+.kenban:hover {
   background-color: #ff6c94; /*ボタン色*/
   color: #fff;
 }
-.div:active {
+.kenban:active {
   /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
   transform: translateY(4px); /*下に動く*/
   border-bottom: none; /*線を消す*/
 }
 
-.mokkin {
-  width: 60px;
+.mokkin,
+.tekkin {
   background-color: #691c0d;
   color: white;
+  border: solid 1px white;
+  padding-top: 20px;
+  height: 32vh;
 }
 .tekkin {
   background-color: rgb(85, 85, 85);
-  color: white;
 }
 .recorder {
-  width: 55px;
+  width: 5vw;
 }
 /* リコーダー */
 #TBL_recorder td,
