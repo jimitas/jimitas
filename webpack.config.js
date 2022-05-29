@@ -1,0 +1,28 @@
+const path = require("path");
+
+module.exports = {
+  mode: "development",
+  // mode: "production",
+  devtool: "inline-source-map",
+  entry: "./app.js",
+  target: "node",
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader", //loader名
+          options: {
+            //Babelの設定
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
+};

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container">
+        <div class="mx-auto">
+          <div class="mb-1" style="text-align: right;">
+            <button id="question" class="btn btn-primary">もんだい</button>
+            <button id="count" class="btn btn-primary">しらべる</button>
+          </div>
+          <select id="form-select" class="form-select bg-light">
+            <option value=5 checked>５までのかず</option>
+            <option value=10 checked>10までのかず</option>
+            <option value=15 checked>15までのかず</option>
+            <option value=20>20までのかず</option>
+          </select>
+          <h4 id="text_box" class="alert alert-light text-center"></h4>
+          <section id="UP" style="display:flex;">
+            <table class="table" id="TBL_A">
+            </table>
+            <table class="table" id="TBL_B">
+            </table>
+          </section>
+          <section id="DOWN" class="mt-5" style="display:flex;">
+            <table class="table" id="TBL_C">
+            </table>
+            <table class="table" id="TBL_D">
+            </table>
+          </section>
+          <div class="mt-1" style="display:flex;justify-content: right;">
+            <div id="score-point"></div>
+            <div>
+              <button id="check_answer" class="btn btn-danger">こたえあわせ</button>
+              <button id="next" class="btn btn-success">つぎの　もんだいへ</button>
+            </div>
+          </div>
+        </div>
+        <div id="score-field"></div>
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <script src="/javascripts/blocks.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body oncontextmenu='return false;'>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container d-flex flex-column">
+        <div class="w-100 h-25 d-flex">
+          <div class="ken_none" style="width:12.5%"></div>
+          <div class="kenban kenban_black tekkin" id="KE_2">#ﾌｧ/♭ソ</div>
+          <div class="kenban kenban_black tekkin" id="KE_4">#ソ/♭ラ</div>
+          <div class="kenban kenban_black tekkin" id="KE_6">#ラ/♭シ</div>
+          <div class="ken_none"></div>
+          <div class="kenban kenban_black tekkin" id="KE_9">#ド/♭レ</div>
+          <div class="kenban kenban_black tekkin" id="KE_11">#レ/♭ミ</div>
+          <div class="ken_none"></div>
+          <div class="kenban kenban_black tekkin" id="KE_14">#ﾌｧ/♭ソ</div>
+          <div class="kenban kenban_black tekkin" id="KE_16">#ソ/♭ラ</div>
+          <div class="kenban kenban_black tekkin" id="KE_18">#ラ/♭シ</div>
+          <div class="ken_none"></div>
+          <div class="kenban kenban_black tekkin" id="KE_21">#ド/♭レ</div>
+          <div class="kenban kenban_black tekkin" id="KE_23">#レ/♭ミ</div>
+          <div class="ken_none"></div>
+          <div class="kenban kenban_black tekkin" id="KE_26">#ﾌｧ/♭ソ</div>
+        </div>
+        <div class="w-100 h-25 d-flex">
+          <div style="width:10%"></div>
+          <div class="kenban kenban_white tekkin" id="KE_1">ﾌｧ</div>
+          <div class="kenban kenban_white tekkin" id="KE_3">ソ</div>
+          <div class="kenban kenban_white tekkin" id="KE_5">ラ</div>
+          <div class="kenban kenban_white tekkin" id="KE_7">シ</div>
+          <div class="kenban kenban_white tekkin" id="KE_8">ド</div>
+          <div class="kenban kenban_white tekkin" id="KE_10">レ</div>
+          <div class="kenban kenban_white tekkin" id="KE_12">ミ</div>
+          <div class="kenban kenban_white tekkin" id="KE_13">ﾌｧ</div>
+          <div class="kenban kenban_white tekkin" id="KE_15">ソ</div>
+          <div class="kenban kenban_white tekkin" id="KE_17">ラ</div>
+          <div class="kenban kenban_white tekkin" id="KE_19">シ</div>
+          <div class="kenban kenban_white tekkin" id="KE_20">ド</div>
+          <div class="kenban kenban_white tekkin" id="KE_22">レ</div>
+          <div class="kenban kenban_white tekkin" id="KE_24">ミ</div>
+          <div class="kenban kenban_white tekkin" id="KE_25">ﾌｧ</div>
+          <div class="kenban kenban_white tekkin" id="KE_27">ソ</div>
+          <div style="width:10%"></div>
+        </div>
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <!-- howler.jsの読み込み -->
+      <script src="/javascripts/howler.min.js"></script>
+      <script src="/javascripts/tekkin.js"></script>
+</body>
+
+</html>

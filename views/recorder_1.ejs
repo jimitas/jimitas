@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body oncontextmenu='return false;'>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="">
+        <div class="d-flex">
+          <div class="h-100" style="width:100px;margin:10px;justify-content: center;">
+            <table id="TBL_recorder">
+              <tr>
+                <td class="h0"></td>
+                <td class="h1">
+                  <div class="hole">
+                    <div id="hole_8"></div>
+                    <div id="hole_9"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="h0">
+                </td>
+                <td class="h1">
+                  <div class="hole">
+                    <div id="hole_6"></div>
+                    <div id="hole_7"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="h0"></td>
+                <td class="h1">
+                  <div id="hole_5"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="h0"></td>
+                <td class="h1">
+                  <div id="hole_4"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="h0"></td>
+                <td class="h2">
+                  <div id="hole_3"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="h0"></td>
+                <td class="h2">
+                  <div id="hole_2"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class="h2">
+                  <div id="hole_0"></div>
+                </td>
+                <td class="h2">
+                  <div id="hole_1"></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="h-100">
+            <div class="kenban_black_area h-25">
+              <div class="kenban recorder kenban_black" id="KE_9">#ド/<br>♭レ</div>
+              <div class="kenban recorder kenban_black" id="KE_11">#レ/<br>♭ミ</div>
+              <div class="ken_none recorder "></div>
+              <div class="kenban recorder kenban_black" id="KE_14">#ﾌｧ/<br>♭ソ</div>
+              <div class="kenban recorder kenban_black" id="KE_16">#ソ/<br>♭ラ</div>
+              <div class="kenban recorder kenban_black" id="KE_18">#ラ/<br>♭シ</div>
+              <div class="ken_none recorder "></div>
+              <div class="kenban recorder kenban_black" id="KE_21">#ド/<br>♭レ</div>
+              <div class="kenban recorder kenban_black" id="KE_23">#レ/<br>♭ミ</div>
+              <div class="ken_none recorder "></div>
+              <div class="kenban recorder kenban_black" id="KE_26">#ﾌｧ/<br>♭ソ</div>
+              <div class="kenban recorder kenban_black" id="KE_28">#ソ/<br>♭ラ</div>
+              <div class="kenban recorder kenban_black" id="KE_30">#ラ/<br>♭シ</div>
+              <div class="ken_none recorder "></div>
+              <div class="kenban recorder kenban_black" id="KE_33">#ド/<br>♭レ</div>
+            </div>
+            <div class="kenban_white_area h-50">
+              <div class="kenban recorder kenban_white" id="KE_8">ド</div>
+              <div class="kenban recorder kenban_white" id="KE_10">レ</div>
+              <div class="kenban recorder kenban_white" id="KE_12">ミ</div>
+              <div class="kenban recorder kenban_white" id="KE_13">ﾌｧ</div>
+              <div class="kenban recorder kenban_white" id="KE_15">ソ</div>
+              <div class="kenban recorder kenban_white" id="KE_17">ラ</div>
+              <div class="kenban recorder kenban_white" id="KE_19">シ</div>
+              <div class="kenban recorder kenban_white" id="KE_20">ド</div>
+              <div class="kenban recorder kenban_white" id="KE_22">レ</div>
+              <div class="kenban recorder kenban_white" id="KE_24">ミ</div>
+              <div class="kenban recorder kenban_white" id="KE_25">ﾌｧ</div>
+              <div class="kenban recorder kenban_white" id="KE_27">ソ</div>
+              <div class="kenban recorder kenban_white" id="KE_29">ラ</div>
+              <div class="kenban recorder kenban_white" id="KE_31">シ</div>
+              <div class="kenban recorder kenban_white" id="KE_32">ド</div>
+              <div class="kenban recorder kenban_white" id="KE_34">レ</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <!-- howler.jsの読み込み -->
+      <script src="/javascripts/howler.min.js"></script>
+      <script src="/javascripts/recorder_1.js"></script>
+</body>
+
+</html>

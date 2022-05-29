@@ -1,0 +1,75 @@
+webpackとBabelを最小構成で作っていきましょう。
+
+srcフォルダを作成し，まとめたいjsファイルを投入
+
+1.package.jsonの作成・確認
+npm init -y
+
+2.npmモジュールのインストール
+npm install -D webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/cli
+
+3.webpack.config.jsの作成・設定
+module.exports = {
+  mode: "development",
+  devtool: "inline-source-map",
+  entry: "./src/index.js",
+  output: {
+    path: __dirname + "/src",
+    filename: "main.js",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader", //loader名
+          options: {
+            //Babelの設定
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
+};
+
+
+4.package.jsonの作成・設定
+{
+  "name": "moto_ver3.3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "babel-loader": "^8.2.3",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage"
+        }
+      ]
+    ]
+  }
+}
+
+
+
+5.webpackを実行する。
+npx webpack
+
+以上。わかれば簡単。

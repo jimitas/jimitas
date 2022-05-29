@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body oncontextmenu='return false;'>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container">
+        <div class="w-75 mx-auto">
+          <div class="mb-1" style="text-align: right;">
+            <input class="form-check-input" type="checkbox" id="move_check">
+            <label class="form-check-label" for="move_check">
+              うごかす
+            </label>
+            <a href="../../recorder_2" class="btn btn-secondary">はじめから</a>
+          </div>
+          <div>
+            <div id="h10"></div>
+            <div id="h9"></div>
+            <div id="h8"></div>
+            <div id="h7"></div>
+            <div id="h6"></div>
+            <div id="h5"></div>
+            <div id="h4"></div>
+            <div id="h3"></div>
+            <div id="h2"></div>
+            <div id="h1"></div>
+            <div id="h0"></div>
+          </div>
+        </div>
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <!-- howler.jsの読み込み -->
+      <script src="/javascripts/howler.min.js"></script>
+      <script src="/javascripts/move.js"></script>
+      <script src="/javascripts/recorder_2.js"></script>
+</body>
+
+</html>
