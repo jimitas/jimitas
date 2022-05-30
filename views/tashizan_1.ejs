@@ -19,16 +19,15 @@
         <div class="mx-auto">
           <div class="mb-1" style="text-align: right;">
             <button class="btn btn-primary" id="question">もんだい</button>
-            <button class="btn btn-primary" id="set">しきを「せっと」</button>
-            <button class="btn btn-secondary" id="response">こたえを　みる</button>
+            <button class="btn btn-primary" id="shiki_set">しきを「せっと」</button>
+            <button class="btn btn-secondary" id="show_answer">こたえを　みる</button>
           </div>
-          <select id="form-select" class="form-select bg-light">
+          <select id="form-select" class="form-select bg-light mb-2">
             <option value="1" checked>10までのかず</option>
             <option value="2" checked>10＋□，□＋10</option>
             <option value="3" checked>１□＋□，□＋１□</option>
             <option value="4">20までのたしざん</option>
           </select>
-          <br>
           <input id="calc_L" class="calc" type="number" name="number" max="20" min="0" step="1" />
           <span class="calc">＋</span>
           <input id="calc_R" class="calc" type="number" name="number" max="20" min="0" step="1" />
@@ -43,7 +42,7 @@
           </section>
           <div id="field" class="d-flex flex-wrap w-100 mt-3 bg-light">
           </div>
-          <div id="response" class="mt-3 text-left" role="group" aria-label="Basic example">
+          <div id="response" class="mt-1 text-left" role="group" aria-label="Basic example">
             <div class="mb-1">
               <button id="btn0" class="btn btn-secondary">0</button>
               <button id="btn1" class="btn btn-secondary">1</button>

@@ -5,14 +5,40 @@ var hikasu = 0;
 var kasu = 0;
 var answer = 0;
 
-form_select.addEventListener("change", () => {
-  console.log(calc_L.value);
+question.addEventListener("click", () => {
+  set.currentTime = 0;
+  set.play();
+  createBlocks();
 });
 
 next.addEventListener("click", () => {
   pi.currentTime = 0;
   pi.play();
   createBlocks();
+});
+
+shiki_set.addEventListener("click", () => {
+  hikasu = calc_L.value;
+  kasu = calc_R.value;
+  answer = Number(hikasu) + Number(kasu);
+  if (answer > 20) {
+    alert.currentTime = 0;
+    alert.play();
+    window.alert("こたえは，20までのかずにしましょう。");
+    return;
+  } else {
+    set.currentTime = 0;
+    set.play();
+  }
+  createTables();
+});
+
+show_answer.addEventListener("click", () => {
+  reset.currentTime = 0;
+  reset.play();
+  calc_result.value = answer;
+  calc_result.style.color = "blue";
+  flag = true;
 });
 
 form_select.addEventListener("change", () => {
@@ -76,14 +102,14 @@ function createBlocks() {
   }
   calc_L.value = hikasu;
   calc_R.value = kasu;
-  calc_result.value = "";
-
   createTables();
   text_box.setAttribute("class", "alert alert-light text-center");
 }
 
 function createTables() {
   clearTables();
+  calc_result.style.color = "black";
+  calc_result.value = "";
   var remain_right = 0;
   var remain_left = 0;
   var put_left = hikasu;
