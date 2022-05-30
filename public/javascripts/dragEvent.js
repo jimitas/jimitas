@@ -34,6 +34,7 @@ document.addEventListener(
       event.target.appendChild(dragged);
       pi.currentTime = 0;
       pi.play();
+      f_end();
     }
   },
   false
@@ -81,10 +82,10 @@ function touchEndEvent(event) {
 
   if (newParentElem.className.match(/droppable-elem/)) {
     // if (newParentElem.className == "droppable-elem") {
-    console.log("ok");
     newParentElem.appendChild(droppedElem);
   }
   pi.currentTime = 0;
   pi.play();
+  f_end();
 }
 ugoki();

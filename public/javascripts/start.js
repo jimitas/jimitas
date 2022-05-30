@@ -39,3 +39,7 @@ document.getElementById("font_select").addEventListener("change", (event) => {
       break;
   }
 });
+
+function f_end() {
+  console.log("end");
+}

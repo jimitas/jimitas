@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container">
+        <div class="mx-auto">
+          <div class="d-flex mb-2" style="justify-content: right;">
+            <h4 id="text_box" class="alert alert-light text-center">
+            </h4>
+            <button id="count_bou" class="btn btn-primary">しらべる</button>
+          </div>
+          <table id="kazoebou_pallet" style="max-width: 960px;">
+            <tr>
+              <td class="droppable-elem up_place hyaku_place"></td>
+              <td class="droppable-elem up_place juu_place"></td>
+              <td class="droppable-elem up_place ichi_place"></td>
+            </tr>
+            <tr>
+              <td class="droppable-elem down_place hyaku_place"></td>
+              <td class="droppable-elem down_place juu_place"></td>
+              <td class="droppable-elem down_place ichi_place"></td>
+            </tr>
+          </table>
+          <div class="d-flex mt-2">
+            <div id="kazoebou_pallet_2" class="droppable-elem">
+            </div>
+            <img id="gomibako" class="droppable-elem" src="./images/gomibako.png" />
+          </div>
+        </div>
+
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <script src="/javascripts/kazoebou.js"></script>
+</body>
+
+</html>
