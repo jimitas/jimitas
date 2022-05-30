@@ -103,11 +103,12 @@ function createBlocks() {
   calc_L.value = hikasu;
   calc_R.value = kasu;
   createTables();
-  text_box.setAttribute("class", "alert alert-light text-center");
 }
 
 function createTables() {
   clearTables();
+  text_box.innerText = "";
+  text_box.setAttribute("class", "alert alert-light text-center");
   calc_result.style.color = "black";
   calc_result.value = "";
   var remain_right = 0;
