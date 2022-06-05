@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("katakana", { title: "カタカナ" });
+  res.render("katakana", { title: "カタカナの　れんしゅう" });
 });
 
 module.exports = router;
