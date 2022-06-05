@@ -88,11 +88,11 @@ function masu_write() {
         div.style.backgroundColor = B_color[h];
         div.style.top = `calc(${i * 30}px + ${Top[h]} )`;
         div.style.left = `calc(${j * 30}px + ${Left[h]})`;
+        if (h < 2) div.classList.add("ironuri");
         div.addEventListener("click", () => {
           pi.currentTime = 0;
           pi.play();
           if (h < 2) {
-            div.style.cursor = "pointer";
             if ((masu_type.value == "1" && flag === false) || (masu_type.value == "1" && flag === true && div.style.backgroundColor != div_color)) {
               div.style.backgroundColor = div_color;
               flag = true;

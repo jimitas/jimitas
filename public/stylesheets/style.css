@@ -255,7 +255,7 @@ img {
   cursor: pointer;
 }
 
-.hiragana_moji:hover,.katakana_moji:hover {
+.hiragana_moji:hover,.katakana_moji:hover,.ironuri:hover {
   background: #ff6c94; /*ボタン色*/
 }
 
@@ -269,4 +269,8 @@ img {
 #myimg {
   width: 120px;
   height: 120px;
+}
+
+.ironuri{
+  cursor: pointer;
 }
