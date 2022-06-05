@@ -10,6 +10,7 @@ var usersRouter = require("./routes/users");
 var blocksRouter = require("./routes/blocks");
 var ikutukanaRouter = require("./routes/ikutukana");
 var ikutu_to_ikutuRouter = require("./routes/ikutu_to_ikutu");
+var ironuriRouter = require("./routes/ironuri");
 var katakanaRouter = require("./routes/katakana");
 var kazoebouRouter = require("./routes/kazoebou");
 var kenhamo_1Router = require("./routes/kenhamo_1");
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/blocks", blocksRouter);
+app.use("/ironuri", ironuriRouter);
 app.use("/ikutukana", ikutukanaRouter);
 app.use("/ikutu_to_ikutu", ikutu_to_ikutuRouter);
 app.use("/katakana", katakanaRouter);
