@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-2 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container">
+        <div class="d-flex">
+          <select class="form-select bg-light" name="type" id="type" style="width:200px;margin-left:20px;">
+            <option value="nanji">なんじなんふん？</option>
+            <option value="ugokasu">はりをうごかそう</option>
+          </select>
+          <select class="form-select bg-light" name="mode" id="mode" style="width:150px;margin-left:20px;">
+            <option value="easy">やさしい</option>
+            <option value="normal">ふつう</option>
+            <option value="difficult">むずかしい</option>
+          </select>
+          <button class="btn btn-secondary mx-3" id="hint1">ヒント１</button>
+          <button class="btn btn-secondary" id="hint2">ヒント２</button>
+          <button class="btn btn-secondary mx-3" id="ans">こたえを　みる</button>
+        </div>
+        <div>
+          <h4 id="text_box" class="alert alert-light text-center" style="width: 720px;"></h4>
+          <div style="display:flex;justify-content:space-between;width:720px;">
+            <button id="Minus">-</button>
+            <h6>とけいのはりは，このスライダーでうごかせます。</h6>
+            <button id="Plus">+</button>
+          </div>
+          <input id="tokei_range" type="range" class="custom-range" min=0 max=720 step=15 style="height:50px; cursor:pointer;width:720px;" />
+        </div>
+        <div class="d-flex">
+          <canvas width="400" height="400" id="clock" class="target"></canvas>
+          <div>
+            <input id="input_hours" class="calc" style="margin: 20px" type="number" max="12" min="1" />じ
+            <input id="input_minutes" class="calc" style="margin: 20px" type="number" max="59" min="0" />ふん
+            <br />
+            <button class="btn btn-primary" style="margin-left:20px;" id="question">もんだい</button>
+            <button class="btn btn-danger" id="check">こたえあわせ</button>
+            <br/>
+            <div style="text-align: right;" id="score-point"></div>
+            <div id="score-field"></div>
+          </div>
+        </div>
+
+
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <script src="/javascripts/tokei.js"></script>
+</body>
+
+</html>
