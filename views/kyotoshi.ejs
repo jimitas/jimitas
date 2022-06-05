@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-2 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container d-flex">
+        <div class="d-flex">
+          <div>
+            <img id="kyotoshi" src="/images/kyotoshi.png" />
+            <span id="ku_1" style="position:absolute;top:380px;left:230px;">北区</span>
+            <span id="ku_2" style="position:absolute;top:425px;left:245px;">上京区</span>
+            <span id="ku_3" style="position:absolute;top:360px;left:290px;">左京区</span>
+            <span id="ku_4" style="position:absolute;top:445px;left:235px;">中京区</span>
+            <span id="ku_5" style="position:absolute;top:475px;left:280px;">東山区</span>
+            <span id="ku_6" style="position:absolute;top:485px;left:310px;">山科区</span>
+            <span id="ku_7" style="position:absolute;top:465px;left:240px;">下京区</span>
+            <span id="ku_8" style="position:absolute;top:495px;left:230px;">南区</span>
+            <span id="ku_9" style="position:absolute;top:400px;left:170px;">右京区</span>
+            <span id="ku_10" style="position:absolute;top:495px;left:150px;">西京区</span>
+            <span id="ku_11" style="position:absolute;top:520px;left:260px;">伏見区</span>
+          </div>
+          <div>
+            <h4 id="text_box" class="alert alert-light text-center">もんだいを　おしてね。</h4>
+            <button id="question" class="btn btn-primary">もんだい</button>
+            <button class="btn btn-danger" id="check">こたえあわせ</button>
+            <table id="ku_nyuryoku">
+              <tr>
+                <td><ruby>北区<rt>きたく</rt></ruby></td>
+                <td><input id="ku_input_1" type="number" max=11 min=1></td>
+                <td id="check_1">?</td>
+              </tr>
+              <tr>
+                <td><ruby>上京区<rt>かみぎょうく</rt></ruby></td>
+                <td><input id="ku_input_2" type="number" max=11 min=1></td>
+                <td id="check_2">?</td>
+              </tr>
+              <tr>
+                <td><ruby>左京区<rt>さきょうく</rt></ruby></td>
+                <td><input id="ku_input_3" type="number" max=11 min=1></td>
+                <td id="check_3">?</td>
+              </tr>
+              <tr>
+                <td><ruby>中京区<rt>なかぎょうく</rt></ruby></td>
+                <td><input id="ku_input_4" type="number" max=11 min=1></td>
+                <td id="check_4">?</td>
+              </tr>
+              <tr>
+                <td><ruby>東山区<rt>ひがしやまく</rt></ruby></td>
+                <td><input id="ku_input_5" type="number" max=11 min=1></td>
+                <td id="check_5">?</td>
+              </tr>
+              <tr>
+                <td><ruby>山科区<rt>やましなく</rt></ruby></td>
+                <td><input id="ku_input_6" type="number" max=11 min=1></td>
+                <td id="check_6">?</td>
+              </tr>
+              <tr>
+                <td><ruby>下京区<rt>しもぎょうく</rt></ruby></td>
+                <td><input id="ku_input_7" type="number" max=11 min=1></td>
+                <td id="check_7">?</td>
+              </tr>
+              <tr>
+                <td><ruby>南区<rt>みなみく</rt></ruby></td>
+                <td><input id="ku_input_8" type="number" max=11 min=1></td>
+                <td id="check_8">?</td>
+              </tr>
+              <tr>
+                <td><ruby>右京区<rt>うきょうく</rt></ruby></td>
+                <td><input id="ku_input_9" type="number" max=11 min=1></td>
+                <td id="check_9">?</td>
+              </tr>
+              <tr>
+                <td><ruby>西京区<rt>にしきょうく</rt></ruby></td>
+                <td><input id="ku_input_10" type="number" max=11 min=1></td>
+                <td id="check_10">?</td>
+              </tr>
+              <tr>
+                <td><ruby>伏見区<rt>ふしみく</rt></ruby></td>
+                <td><input id="ku_input_11" type="number" max=11 min=1></td>
+                <td id="check_11">?</td>
+              </tr>
+            </table>
+            <div style="text-align: right;" id="score-point"></div>
+            <div id="score-field" style="display:flex;align-items: flex-start;"></div>
+          </div>
+        </div>
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <script src="/javascripts/kyotoshi.js"></script>
+</body>
+
+</html>

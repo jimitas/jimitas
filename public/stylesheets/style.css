@@ -234,14 +234,16 @@ img {
   background-color: navajowhite;
 }
 
-.hiragana_masu,.katakana_masu {
+.hiragana_masu,
+.katakana_masu {
   width: 60px;
   height: 60px;
   border: black 1px solid;
   border-collapse: collapse;
 }
 
-.hiragana_moji,.katakana_moji {
+.hiragana_moji,
+.katakana_moji {
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -255,11 +257,14 @@ img {
   cursor: pointer;
 }
 
-.hiragana_moji:hover,.katakana_moji:hover,.ironuri:hover {
+.hiragana_moji:hover,
+.katakana_moji:hover,
+.ironuri:hover {
   background: #ff6c94; /*ボタン色*/
 }
 
-.hiragana_moji:active,.katakana_masu:active {
+.hiragana_moji:active,
+.katakana_masu:active {
   /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
   transform: translateY(4px); /*下に動く*/
@@ -271,6 +276,16 @@ img {
   height: 120px;
 }
 
-.ironuri{
+.ironuri {
   cursor: pointer;
+}
+
+#kyotoshi {
+  position: relative;
+  width: 421px;
+  height: 596px;
+}
+
+#ku_nyuryoku td{
+  height:35px;
 }

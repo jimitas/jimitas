@@ -14,6 +14,7 @@ var katakanaRouter = require("./routes/katakana");
 var kazoebouRouter = require("./routes/kazoebou");
 var kenhamo_1Router = require("./routes/kenhamo_1");
 var kenhamo_2Router = require("./routes/kenhamo_2");
+var kyotoshiRouter = require("./routes/kyotoshi");
 var mokkinRouter = require("./routes/mokkin");
 var tashizan_1Router = require("./routes/tashizan_1");
 var tekkinRouter = require("./routes/tekkin");
@@ -43,6 +44,7 @@ app.use("/katakana", katakanaRouter);
 app.use("/kazoebou", kazoebouRouter);
 app.use("/kenhamo_1", kenhamo_1Router);
 app.use("/kenhamo_2", kenhamo_2Router);
+app.use("/kyotoshi",kyotoshiRouter)
 app.use("/mokkin", mokkinRouter);
 app.use("/tashizan_1", tashizan_1Router);
 app.use("/tekkin", tekkinRouter);
