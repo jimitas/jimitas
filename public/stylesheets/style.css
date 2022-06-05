@@ -234,14 +234,14 @@ img {
   background-color: navajowhite;
 }
 
-.hiragana_masu {
+.hiragana_masu,.katakana_masu {
   width: 60px;
   height: 60px;
   border: black 1px solid;
   border-collapse: collapse;
 }
 
-.hiragana_moji {
+.hiragana_moji,.katakana_moji {
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -255,11 +255,11 @@ img {
   cursor: pointer;
 }
 
-.hiragana_moji:hover {
+.hiragana_moji:hover,.katakana_moji:hover {
   background: #ff6c94; /*ボタン色*/
 }
 
-.hiragana_moji:active {
+.hiragana_moji:active,.katakana_masu:active {
   /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
   transform: translateY(4px); /*下に動く*/
