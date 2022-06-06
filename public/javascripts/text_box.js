@@ -120,6 +120,240 @@ const kotoba = [
   { no: 119, img: "soccer", kana: "", katakana: "サッカー", type: "yc" },
   { no: 120, img: "panda", kana: "", katakana: "パンダ", type: "dhd" },
 ];
+const romaji_image = [
+  "cake",
+  "epuron",
+  "furaipan",
+  "gam",
+  "heriko",
+  "hiitaa",
+  "hotto",
+  "ice",
+  "iyaring",
+  "kasuta",
+  "kiui",
+  "koppu",
+  "maraka",
+  "meron",
+  "motaka",
+  "note",
+  "otobai",
+  "pan",
+  "randoseru",
+  "remon",
+  "retasu",
+  "riisu",
+  "robot",
+  "ruuretto",
+  "seetaa",
+  "shu",
+  "sinba",
+  "soft",
+  "supun",
+  "suzu",
+  "taiya",
+  "tanb",
+  "tent",
+  "tomato",
+  "tonakai",
+  "torai",
+  "tyuripu",
+  "uinna",
+  "wain",
+  "waishatu",
+  "yoyo",
+  "yuniho",
+  "banana",
+  "ringo",
+  "orange",
+  "tomato",
+  "ichigo",
+  "computer",
+  "cookie",
+];
+const romaji_kotoba = [
+  2,
+  "KĒKI",
+  "kêki",
+  2,
+  "EPURON",
+  "eporon",
+  4,
+  "HURAIPAN",
+  "huraipan",
+  "FURAIPAN",
+  "furaipan",
+  2,
+  "GAMU",
+  "gamu",
+  2,
+  "HERIKOPUTĀ",
+  "herikoputâ",
+  2,
+  "HĪTĀ",
+  "hîtâ",
+  2,
+  "HOTTOKĒKI",
+  "hottokêki",
+  2,
+  "AISUKURĪMU",
+  "aisukurîmu",
+  2,
+  "IYARINGU",
+  "iyaringu",
+  2,
+  "KASUTANETTO",
+  "kasutanetto",
+  2, //32
+  "KIUI",
+  "kiui",
+  2,
+  "KOPPU",
+  "koppu",
+  2,
+  "MARAKASU",
+  "marakasu",
+  2, //41
+  "MERON",
+  "meron",
+  2,
+  "MŌTĀKĀ",
+  "môtâkâ",
+  2,
+  "NŌTO",
+  "nôto",
+  4, //50
+  "ŌTOBAI",
+  "ôtobai",
+  "BAIKU",
+  "baiku",
+  2, //55
+  "PAN",
+  "pan",
+  2, //58
+  "RANDOSERU",
+  "randoseru",
+  2, //61
+  "REMON",
+  "remon",
+  2, //64
+  "RETASU",
+  "retasu",
+  2, //67
+  "RĪSU",
+  "rîsu",
+  2, //70
+  "ROBOTTO",
+  "robotto",
+  2, //73
+  "RŪRETTO",
+  "rûretto",
+  2, //76
+  "SĒTĀ",
+  "sêtâ",
+  2, //79
+  "SYŪZU",
+  "syûzu",
+  4, //82
+  "SINBARU",
+  "sinbaru",
+  "SHINBARU",
+  "shinbaru",
+  4, //87
+  "SOHUTOKURĪMU",
+  "sohutokurîmu",
+  "SOFUTOKURĪMU",
+  "sofutokurîmu",
+  2, //92
+  "SUPŪN",
+  "supûn",
+  2, //95
+  "SUZU",
+  "suzu",
+  2, //98
+  "TAIYA",
+  "taiya",
+  4, //101
+  "TANBURIN",
+  "TANBARIN",
+  "tanburin",
+  "tanbarin",
+  2, //106
+  "TENTO",
+  "tento",
+  2, //109
+  "TOMATO",
+  "tomato",
+  2, //112
+  "TONAKAI",
+  "tonakai",
+  2, //115
+  "TORAIANGURU",
+  "toraianguru",
+  4, //118
+  "TYŪRIPPU",
+  "CHŪRIPPU",
+  "tyûrippu",
+  "chûrippu",
+  4, //123
+  "UIN'NĀ",
+  "WIN'NĀ",
+  "uin'nâ",
+  "win'nâ",
+  2, //128
+  "WAIN",
+  "wain",
+  8, //131
+  "WAISYATU",
+  "waisyatu",
+  "WAISHATU",
+  "waishatu",
+  "WAISYATSU",
+  "waisyatsu",
+  "WAISHATSU",
+  "waishatsu",
+  2, //140
+  "YŌYŌ",
+  "yôyô",
+  4, //143
+  "UNIHŌMU",
+  "unihômu",
+  "UNIFŌMU",
+  "unifômu",
+  2, //148
+  "BANANA",
+  "banana",
+  2, //151
+  "RINGO",
+  "ringo",
+  4, //154
+  "ORENJI",
+  "ORENZI",
+  "orenji",
+  "orenzi",
+  2, //159
+  "TOMOTO",
+  "tomato",
+  4, //162
+  "ITIGO",
+  "itigo",
+  "ICHIGO",
+  "ichigo",
+  4, //167
+  "KONPYŪTĀ",
+  "konpyûtâ",
+  "KONPYŪTA",
+  "konpyûta",
+  2, //172
+  "KUKKĪ",
+  "kukkî",
+];
+const romaji_index = [
+  0, 3, 6, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 87, 92, 95, 98, 101, 106, 109, 112, 115, 118, 123, 128, 131, 140, 143, 148, 151, 154, 159,
+  162, 167, 172,
+];
+var kaishi;
+var shuryou;
 
 if (title.innerText == "ひらがなの　れんしゅう　１") {
   kaishi = 0;
@@ -132,18 +366,33 @@ if (title.innerText == "ひらがなの　れんしゅう　１") {
   shuryou = 120;
 }
 
-const img = document.getElementById("myimg");
-
 // 配列の入れ替え・設定
 var n = 0;
-var kotae;
 const hairetu = [];
-let arr = [];
-for (let j = 0; j < shuryou - kaishi; j++) {
-  hairetu[j] = j;
-}
-for (let j = 0; j < shuryou - kaishi; j++) {
-  arr.push(...hairetu.splice(Math.floor(Math.random() * hairetu.length - 1), 1));
+const romaji_hairetu = [];
+var arr = [];
+var romaji_arr = [];
+var img = document.getElementById("myimg");
+//ローマ字の練習のとき
+if (title.innerText == "ローマ字の練習") {
+  var kotae = romaji_kotoba[romaji_arr[0]];
+  var kotae_index = romaji_index[romaji_arr[0]];
+  var kotae_length = romaji_kotoba[kotae_index];
+  for (let j = 0; j < romaji_image.length; j++) {
+    romaji_hairetu[j] = j;
+  }
+  for (let j = 0; j < romaji_image.length; j++) {
+    romaji_arr.push(...romaji_hairetu.splice(Math.floor(Math.random() * romaji_hairetu.length - 1), 1));
+  }
+  //ローマ字の練習以外のとき
+} else {
+  var kotae;
+  for (let j = 0; j < shuryou - kaishi; j++) {
+    hairetu[j] = j;
+  }
+  for (let j = 0; j < shuryou - kaishi; j++) {
+    arr.push(...hairetu.splice(Math.floor(Math.random() * hairetu.length - 1), 1));
+  }
 }
 
 mondai_set();
@@ -168,6 +417,7 @@ document.getElementById("del").addEventListener("click", () => {
 document.getElementById("next").addEventListener("click", () => {
   n = n + 1;
   if (shuryou - kaishi < n + 1) n = 0;
+  if (romaji_image.length < n + 1) n = 0;
   mondai_set();
 });
 
@@ -175,7 +425,13 @@ document.getElementById("next").addEventListener("click", () => {
 document.getElementById("response").addEventListener("click", () => {
   text_box.setAttribute("class", "alert alert-light text-center");
   text_box.style.color = "blue";
-  text_box.innerText = kotae;
+  if (title.innerText != "ローマ字の練習") {
+    text_box.innerText = kotae;
+  } else {
+    for (let num = 1; num < kotae_length + 1; num++) {
+      text_box.innerText = text_box.innerText + "　　" + romaji_kotoba[kotae_index + num];
+    }
+  }
   reset.currentTime = 0;
   reset.play();
 });
@@ -188,11 +444,18 @@ function mondai_set() {
   input_box.innerText = "";
   text_box.style.color = "black";
   text_box.innerText = "";
-  img.setAttribute("src", "./images/" + kotoba[arr[n] + kaishi].img + ".png");
+
   if (title.innerText == "ひらがなの　れんしゅう　１" || title.innerText == "ひらがなの　れんしゅう　２") {
     kotae = kotoba[arr[n] + kaishi].kana;
+    img.setAttribute("src", "./images/" + kotoba[arr[n] + kaishi].img + ".png");
   } else if (title.innerText == "カタカナの　れんしゅう") {
     kotae = kotoba[arr[n] + kaishi].katakana;
+    img.setAttribute("src", "./images/" + kotoba[arr[n] + kaishi].img + ".png");
+  } else if (title.innerText == "ローマ字の練習") {
+    //答えのindexと答えの数を設定
+    kotae_index = romaji_index[romaji_arr[n]];
+    kotae_length = romaji_kotoba[kotae_index];
+    img.setAttribute("src", "./images/" + romaji_image[romaji_arr[n]] + ".png");
   }
   set.currentTime = 0;
   set.play();

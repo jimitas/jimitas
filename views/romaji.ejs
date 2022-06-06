@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 id="title" class="mt-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container">
+        <div class="mx-auto">
+          <section style="display:flex;justify-content: center;">
+            <aside style="width:120px;height:120px;">
+              <img id="myimg">
+            </aside>
+            <article class="mb-1" style="text-align: right;">
+              <h4 id="text_box" class="alert alert-light text-center"></h4>
+              <h4 id="input_box" class="alert alert-light text-center"></h4>
+              <div style="margin-left: 10px;">
+                <button class="btn btn-secondary" id="clear">ぜんぶけす</button>
+                <button class="btn btn-secondary" id="del">１つけす</button>
+                <button class="btn btn-secondary" id="response">こたえを　みる</button>
+                <label for="moji_togle" class="btn btn-info">
+                  <input id="moji_togle" type="checkbox" />きりかえ
+                </label>
+              </div>
+            </article>
+          </section>
+          <table id="TBL_romaji" class="mt-2 mx-auto">
+          </table>
+          <div class="mt-1" style="display:flex;justify-content: right;">
+            <div id="score-point"></div>
+            <div>
+              <button id="next" class="btn btn-success">つぎの　もんだいへ</button>
+              <button id="check_answer" class="btn btn-danger">こたえあわせ</button>
+            </div>
+          </div>
+        </div>
+        <div id="score-field"></div>
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <script src="/javascripts/text_box.js"></script>
+      <script src="/javascripts/romaji.js"></script>
+</body>
+
+</html>

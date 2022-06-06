@@ -278,7 +278,8 @@ img {
 }
 
 .hiragana_masu,
-.katakana_masu {
+.katakana_masu,
+.romaji_masu {
   width: 60px;
   height: 60px;
   border: black 1px solid;
@@ -286,10 +287,11 @@ img {
 }
 
 .hiragana_moji,
-.katakana_moji {
+.katakana_moji,
+.romaji_moji {
   width: 50px;
   height: 50px;
-  line-height: 50px;
+  line-height: 55px;
   font-size: 40px;
   margin: auto;
   border: black 1px solid;
@@ -303,19 +305,26 @@ img {
 .hiragana_moji:hover,
 .hiragana_moji .ironuri:hover,
 .katakana_moji:hover,
-.katakana_moji .ironuri:hover {
+.katakana_moji .ironuri:hover,
+.romaji_moji:hover,
+.romaji_moji .ironuri:hover {
   background: #ff6c94;
   /*ボタン色*/
 }
 
 .hiragana_moji:active,
-.katakana_moji:active {
+.katakana_moji:active,
+.romaji_moji:active {
   /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
   /*下に動く*/
   border-bottom: none;
   /*線を消す*/
+}
+
+.romaji_moji {
+  line-height: 60px;
 }
 
 #myimg {

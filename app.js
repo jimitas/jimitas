@@ -7,8 +7,11 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var blocksRouter = require("./routes/blocks");
-var ikutukanaRouter = require("./routes/ikutukana");
+var hikizan_1Router = require("./routes/hikizan_1");
+var hiragana_1Router = require("./routes/hiragana_1");
+var hiragana_2Router = require("./routes/hiragana_2");
 var ikutu_to_ikutuRouter = require("./routes/ikutu_to_ikutu");
+var ikutukanaRouter = require("./routes/ikutukana");
 var ironuriRouter = require("./routes/ironuri");
 var katakanaRouter = require("./routes/katakana");
 var kazoebouRouter = require("./routes/kazoebou");
@@ -22,9 +25,7 @@ var todofukenRouter = require("./routes/todofuken");
 var tokeiRouter = require("./routes/tokei");
 var recorder_1Router = require("./routes/recorder_1");
 var recorder_2Router = require("./routes/recorder_2");
-var hikizan_1Router = require("./routes/hikizan_1");
-var hiragana_1Router = require("./routes/hiragana_1");
-var hiragana_2Router = require("./routes/hiragana_2");
+var romajiRouter = require("./routes/romaji");
 var app = express();
 
 // view engine setup
@@ -39,6 +40,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/blocks", blocksRouter);
+app.use("/hikizan_1", hikizan_1Router);
+app.use("/hiragana_1", hiragana_1Router);
+app.use("/hiragana_2", hiragana_2Router);
 app.use("/ironuri", ironuriRouter);
 app.use("/ikutukana", ikutukanaRouter);
 app.use("/ikutu_to_ikutu", ikutu_to_ikutuRouter);
@@ -46,7 +50,7 @@ app.use("/katakana", katakanaRouter);
 app.use("/kazoebou", kazoebouRouter);
 app.use("/kenhamo_1", kenhamo_1Router);
 app.use("/kenhamo_2", kenhamo_2Router);
-app.use("/kyotoshi",kyotoshiRouter)
+app.use("/kyotoshi", kyotoshiRouter);
 app.use("/mokkin", mokkinRouter);
 app.use("/tashizan_1", tashizan_1Router);
 app.use("/tekkin", tekkinRouter);
@@ -54,9 +58,7 @@ app.use("/todofuken", todofukenRouter);
 app.use("/tokei", tokeiRouter);
 app.use("/recorder_1", recorder_1Router);
 app.use("/recorder_2", recorder_2Router);
-app.use("/hikizan_1", hikizan_1Router);
-app.use("/hiragana_1", hiragana_1Router);
-app.use("/hiragana_2", hiragana_2Router);
+app.use("/romaji", romajiRouter);
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
