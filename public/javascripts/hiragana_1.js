@@ -10,6 +10,7 @@ check_answer.addEventListener("click", () => {
     text_box.innerText = "もういちど";
   }
 });
+
 moji_togle.addEventListener("change", () => {
   pi.currentTime = 0;
   pi.play();
