@@ -1,5 +1,6 @@
 set.play();
 scoreWright();
+flag = false;
 const hiragana_data_1 = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもや　ゆ　よらりるれろわ　を　ん";
 const hiragana_data_2 = "がぎぐげござじすぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょっ";
 const moji_togle = document.getElementById("moji_togle");
@@ -46,14 +47,14 @@ function createTable() {
       div.innerHTML = moji;
       div.addEventListener("click", () => {
         input_box.style.color = "black";
-        if (input_box.innerText.length < 10) {
+        if (input_box.innerText.length < 15) {
           pi.currentTime = 0;
           pi.play();
           input_box.innerText = input_box.innerText + moji;
         } else {
           alert.currentTime = 0;
           alert.play();
-          text_box.innerText = "１０もじまでにしてね。";
+          text_box.innerText = "15もじまでにしてね。";
           text_box.setAttribute("class", "alert alert-danger text-center");
         }
       });

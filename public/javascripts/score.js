@@ -15,7 +15,7 @@ function checkAnswer(response, answer) {
     sendRight();
   } else if (response != answer && flag === false) {
     sendWrong();
-  } else {
+  } else if (flag == true) {
     pi.currentTime = 0;
     pi.play();
     text_box.innerText = "「つぎの　もんだいへ」を　おしてね。";

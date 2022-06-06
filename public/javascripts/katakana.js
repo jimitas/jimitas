@@ -1,5 +1,6 @@
 set.play();
 scoreWright();
+flag = false;
 const katakana_data_1 = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤ　ユ　ヨラリルレロワ　ヲ　ン";
 const katakana_data_2 = "ガキグゲゴザジズゼゾダヂヅデドバビブベボパピプペポーャュョッ";
 const moji_togle = document.getElementById("moji_togle");

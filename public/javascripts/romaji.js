@@ -1,20 +1,28 @@
 set.play();
 scoreWright();
+flag = false;
 const romaji_data_1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ' ĀĪŪĒŌ";
 const romaji_data_2 = "abcdefghijklmnopqrstuvwxyz' âîûêô";
 const moji_togle = document.getElementById("moji_togle");
 const TBL_romaji = document.getElementById("TBL_romaji");
 
 check_answer.addEventListener("click", () => {
+  result = "";
   for (let num = 1; num < kotae_length + 1; num++) {
     kotae = romaji_kotoba[kotae_index + num];
-    console.log(text_box.innerText, kotae);
     if (input_box.innerText == kotae) {
-      sendRight();
-      return;
-    } else {
-      sendWrong();
+      result = "collect";
     }
+  }
+  if (result == "collect" && flag == false) {
+    sendRight();
+  } else if (result != "collect" && flag == false) {
+    sendWrong();
+  } else if (flag == true) {
+    pi.currentTime = 0;
+    pi.play();
+    text_box.innerText = "「つぎの　もんだいへ」を　おしてね。";
+    text_box.setAttribute("class", "alert alert-light text-center");
   }
 });
 
