@@ -134,7 +134,7 @@ function createTables() {
       }
       if (i === 0) TBL_A.appendChild(tr);
       if (i === 1) TBL_B.appendChild(tr);
-      if (i === 2) TBL_C.appendChild(tr);
+      if (i === 2) TBL_E.appendChild(tr);
     }
   }
   ugoki();
