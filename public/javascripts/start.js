@@ -16,7 +16,7 @@ document.oncontextmenu = () => {
 // );
 ピンチズーム禁止
 const touchHandler = (event) => {
-  if (event.touches.length > 2) {
+  if (event.touches.length > 1) {
     event.preventDefault();
   }
 };
