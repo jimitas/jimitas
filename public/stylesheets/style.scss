@@ -115,6 +115,13 @@ img {
     border-radius: 50%;
   }
 }
+#TBL_C td {
+  background-color: #666;
+  div {
+    opacity: 0.3;
+    border: solid 2px yellow;
+  }
+}
 
 #kazoebou_pallet {
   border: 1px solid black;
