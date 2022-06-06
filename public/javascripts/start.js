@@ -2,13 +2,39 @@
 function noScroll(event) {
   event.preventDefault();
 }
-
+//右クリック禁止
+document.oncontextmenu = () => {
+  return false;
+};
+//スワイプ禁止
+document.addEventListener(
+  "touchmove",
+  (event) => {
+    event.preventDefault();
+  },
+  { passive: false }
+);
+//ピンチズーム禁止
+const touchHandler = (event) => {
+  if (event.touches.length > 1) {
+    event.preventDefault();
+  }
+};
+document.addEventListener("touchstart", touchHandler, {
+  passive: false,
+});
 // スクロール禁止(SP)
-// document.addEventListener("touchmove", noScroll, { passive: false });
+document.addEventListener("touchmove", noScroll, { passive: false });
 // スクロール禁止(PC)
-// document.addEventListener("mousewheel", noScroll, { passive: false });
+document.addEventListener("mousewheel", noScroll, { passive: false });
 //ダブルタップによる拡大禁止
-document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
+document.addEventListener(
+  "dblclick",
+  function (e) {
+    e.preventDefault();
+  },
+  { passive: false }
+);
 
 document.body.style.backgroundColor = "white";
 document.body.style.color = "black";
