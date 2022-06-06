@@ -94,7 +94,6 @@ function createBlocks() {
   answer = higensu - gensu;
   calc_L.value = higensu;
   calc_R.value = gensu;
-  calc_result.value = answer; //
   createTables();
 }
 
