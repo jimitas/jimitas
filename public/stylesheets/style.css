@@ -136,11 +136,11 @@ img {
   border-radius: 50%;
 }
 
-#TBL_C td {
+#TBL_E td {
   background-color: #666;
 }
 
-#TBL_C td div {
+#TBL_E td div {
   opacity: 0.3;
   border: solid 2px yellow;
 }
