@@ -35,6 +35,7 @@ function TBL_set() {
         case 1:
           td.classList.add("droppable-elem");
           td.style.border = "solid 1px #333";
+          td.style.width = "100px";
           break;
         case 2:
           td.style.width = "110px";
