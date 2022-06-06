@@ -24,9 +24,9 @@ document.addEventListener("touchstart", touchHandler, {
   passive: false,
 });
 // スクロール禁止(SP)
-document.addEventListener("touchmove", noScroll, { passive: false });
+// document.addEventListener("touchmove", noScroll, { passive: false });
 // スクロール禁止(PC)
-document.addEventListener("mousewheel", noScroll, { passive: false });
+// document.addEventListener("mousewheel", noScroll, { passive: false });
 //ダブルタップによる拡大禁止
 document.addEventListener(
   "dblclick",
