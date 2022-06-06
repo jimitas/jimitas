@@ -234,6 +234,9 @@ function drawBoard() {
   ctx.arc(200, 200, 150, 0, Math.PI * 2);
   ctx.lineWidth = 1.0;
   ctx.strokeStyle = "black";
+  ctx.fillStyle = "rgb(255,255,255,1)";
+  ctx.fill();
+  ctx.fillStyle = "rgb(0,0,0,1)"
   ctx.stroke();
 }
 

@@ -1,0 +1,303 @@
+html,
+body {
+  height: 100%;
+  font-weight: 600;
+  font-family: "UD Digi Kyokasho N-B";
+  user-select: none;
+}
+
+.navbar {
+  z-index: 100;
+}
+
+.outerframe {
+  min-height: 100%;
+  position: relative;
+  main {
+    display: flex;
+    position: absolute;
+    padding-top: 3rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  > .container {
+    padding-bottom: 3rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  > footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+a {
+  color: #00b7ff;
+}
+
+#gomibako {
+  width: 80px;
+  height: 100px;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* 得点表示 */
+#score-field {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  .coin {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+  }
+  .medal {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+  }
+  .gold {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+}
+
+/* テキストボックス */
+#input_box,
+#text_box {
+  height: 2rem;
+  margin: 10px;
+  padding: 0;
+  text-align: center;
+  line-height: 2rem;
+}
+
+/* フォームセレクト */
+.form-select {
+  border: #ff6c94 2px solid;
+  cursor: pointer;
+}
+
+.calc {
+  text-align: center;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+/* 数図ブロック */
+#UP,
+#DOWN {
+  td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: azure;
+  }
+  div {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+}
+
+#kazoebou_pallet {
+  border: 1px solid black;
+  background-color: azure;
+  td {
+    vertical-align: top;
+    border: 1px #333 dashed;
+    height: 170px;
+  }
+  .hyaku_place {
+    max-width: 410px;
+    min-width: 410px;
+    background-color: pink;
+  }
+  .juu_place {
+    max-width: 310px;
+    min-width: 310px;
+    background-color: lightyellow;
+  }
+  .ichi_place {
+    max-width: 210px;
+    min-width: 210px;
+    background-color: lightblue;
+  }
+}
+
+.kenban,
+.ken_none {
+  width: 5.6vw;
+}
+
+.kenban_white {
+  height: 60vh;
+  border: solid 1px black;
+  padding-top: 35vh;
+}
+
+.kenban_black {
+  background: #333; /*ボタン色*/
+  color: #fff;
+  padding-top: 20px;
+  height: 30vh;
+  border: solid 1px white;
+  z-index: 20;
+}
+
+.ken_none {
+  z-index: -1;
+}
+
+.kenban {
+  text-align: center;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover {
+    background-color: #ff6c94; /*ボタン色*/
+    color: #fff;
+  }
+  &:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px); /*下に動く*/
+    border-bottom: none; /*線を消す*/
+  }
+}
+
+.mokkin,
+.tekkin {
+  background-color: #691c0d;
+  color: white;
+  border: solid 1px white;
+  padding-top: 20px;
+  height: 32vh;
+}
+.tekkin {
+  background-color: rgb(85, 85, 85);
+}
+.recorder {
+  width: 5vw;
+}
+
+/* リコーダー */
+#TBL_recorder {
+  td,
+  .h1 {
+    width: 50px;
+    height: 50px;
+    border: black 1px solid;
+    border-collapse: collapse;
+    background-color: burlywood;
+  }
+  td div {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    border: #333 solid 2px;
+    background-color: white;
+  }
+  .hole {
+    width: 50px;
+    height: 40px;
+    display: flex;
+    background-color: burlywood;
+    border: none;
+  }
+  .h0 {
+    background-color: #f6f0cc;
+    opacity: 0;
+    border: none;
+  }
+  .h2 {
+    background-color: navajowhite;
+  }
+}
+
+.hiragana_masu,
+.katakana_masu {
+  width: 60px;
+  height: 60px;
+  border: black 1px solid;
+  border-collapse: collapse;
+}
+
+.hiragana_moji,
+.katakana_moji {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  margin: auto;
+  border: black 1px solid;
+  text-align: center;
+  color: #333;
+  background-color: white;
+  border-radius: 10%;
+  cursor: pointer;
+  &:hover,
+  .ironuri:hover {
+    background: #ff6c94; /*ボタン色*/
+  }
+  &:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px); /*下に動く*/
+    border-bottom: none; /*線を消す*/
+  }
+}
+
+#myimg {
+  width: 120px;
+  height: 120px;
+}
+
+.ironuri {
+  cursor: pointer;
+  &:hover {
+    background: #ff6c94; /*ボタン色*/
+  }
+}
+
+#kyotoshi {
+  position: relative;
+  width: 421px;
+  height: 596px;
+}
+
+#TBL_kyotoshi {
+  td {
+    height: 35px;
+    .droppable-elem {
+      width: 102px;
+      height: 35px;
+    }
+  }
+  .draggable-elem {
+    width: 98px;
+    height: 31px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    background-color: antiquewhite;
+    cursor: pointer;
+  }
+}
