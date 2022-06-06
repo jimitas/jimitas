@@ -4,9 +4,11 @@ function noScroll(event) {
 }
 
 // スクロール禁止(SP)
-document.addEventListener("touchmove", noScroll, { passive: false });
+// document.addEventListener("touchmove", noScroll, { passive: false });
 // スクロール禁止(PC)
-document.addEventListener("mousewheel", noScroll, { passive: false });
+// document.addEventListener("mousewheel", noScroll, { passive: false });
+//ダブルタップによる拡大禁止
+document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
 
 document.body.style.backgroundColor = "white";
 document.body.style.color = "black";
