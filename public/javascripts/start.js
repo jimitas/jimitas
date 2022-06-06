@@ -7,13 +7,13 @@ document.oncontextmenu = () => {
   return false;
 };
 //スワイプ禁止
-document.addEventListener(
-  "touchmove",
-  (event) => {
-    event.preventDefault();
-  },
-  { passive: false }
-);
+// document.addEventListener(
+//   "touchmove",
+//   (event) => {
+//     event.preventDefault();
+//   },
+//   { passive: false }
+// );
 //ピンチズーム禁止
 // const touchHandler = (event) => {
 //   if (event.touches.length > 2) {
