@@ -18,6 +18,7 @@ var kyotoshiRouter = require("./routes/kyotoshi");
 var mokkinRouter = require("./routes/mokkin");
 var tashizan_1Router = require("./routes/tashizan_1");
 var tekkinRouter = require("./routes/tekkin");
+var todofukenRouter = require("./routes/todofuken");
 var tokeiRouter = require("./routes/tokei");
 var recorder_1Router = require("./routes/recorder_1");
 var recorder_2Router = require("./routes/recorder_2");
@@ -48,6 +49,7 @@ app.use("/kyotoshi",kyotoshiRouter)
 app.use("/mokkin", mokkinRouter);
 app.use("/tashizan_1", tashizan_1Router);
 app.use("/tekkin", tekkinRouter);
+app.use("/todofuken", todofukenRouter);
 app.use("/tokei", tokeiRouter);
 app.use("/recorder_1", recorder_1Router);
 app.use("/recorder_2", recorder_2Router);

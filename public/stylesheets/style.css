@@ -286,6 +286,21 @@ img {
   height: 596px;
 }
 
-#ku_nyuryoku td{
-  height:35px;
+#TBL_kyotoshi td {
+  height: 35px;
+}
+
+#TBL_kyotoshi .droppable-elem {
+  width: 102px;
+  height: 35px;
+}
+
+#TBL_kyotoshi .draggable-elem {
+  width: 98px;
+  height: 31px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  background-color: antiquewhite;
+  cursor: pointer;
 }
