@@ -16,7 +16,7 @@ document.addEventListener(
 );
 //ピンチズーム禁止
 const touchHandler = (event) => {
-  if (event.touches.length > 1) {
+  if (event.touches.length > 2) {
     event.preventDefault();
   }
 };
@@ -27,6 +27,7 @@ document.addEventListener("touchstart", touchHandler, {
 // document.addEventListener("touchmove", noScroll, { passive: false });
 // スクロール禁止(PC)
 // document.addEventListener("mousewheel", noScroll, { passive: false });
+
 //ダブルタップによる拡大禁止
 document.addEventListener(
   "dblclick",
