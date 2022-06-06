@@ -1,3 +1,13 @@
+// ピンチイン・アウトによる拡大縮小をなるべくふせぐ。
+document.body.addEventListener(
+  "touchmove",
+  function (e) {
+    e.preventDefault();
+  },
+  { passive: false }
+);
+
+
 var finger;
 //運指データ(0_あける　1_おさえる 2_サミング)
 const u1 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];

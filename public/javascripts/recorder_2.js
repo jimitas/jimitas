@@ -1,3 +1,13 @@
+// ピンチイン・アウトによる拡大縮小をなるべくふせぐ。
+document.body.addEventListener(
+  "touchmove",
+  function (e) {
+    e.preventDefault();
+  },
+  { passive: false }
+);
+
+
 //指の穴，運指コード　初期設定
 const h0 = document.getElementById("h0");
 const h7 = document.getElementById("h7");
@@ -122,14 +132,6 @@ for (let j = 0; j < 11; j++) {
   });
 }
 
-// ピンチイン・アウトによる拡大縮小をなるべくふせぐ。
-document.body.addEventListener(
-  "touchmove",
-  function (e) {
-    e.preventDefault();
-  },
-  { passive: false }
-);
 
 //音源の登録
 var se = [];

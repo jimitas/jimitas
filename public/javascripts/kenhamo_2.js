@@ -1,3 +1,12 @@
+// ピンチイン・アウトによる拡大縮小をなるべくふせぐ。
+document.body.addEventListener(
+  "touchmove",
+  function (e) {
+    e.preventDefault();
+  },
+  { passive: false }
+);
+
 // インスタンスを生成
 for (let i = 1; i < 28; i++) {
   const Key = document.querySelector("#KE_" + i);

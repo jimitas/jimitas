@@ -1,3 +1,12 @@
+// ピンチイン・アウトによる拡大縮小をなるべくふせぐ。
+document.body.addEventListener(
+  "touchmove",
+  function (e) {
+    e.preventDefault();
+  },
+  { passive: false }
+);
+
 const index = ["", "ke-8", "ke-10", "ke-12", "ke-13", "ke-15", "ke-17", "ke-19", "ke-20", "kasuta", "tam", "cow"];
 
 // インスタンスを生成
