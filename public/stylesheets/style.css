@@ -8,6 +8,8 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 
 .navbar {
@@ -351,13 +353,7 @@ img {
   height: 35px;
 }
 
-#TBL_kyotoshi td .droppable-elem {
-  width: 102px;
-  height: 35px;
-}
-
 #TBL_kyotoshi .draggable-elem {
-  width: 98px;
   height: 31px;
   font-size: 12px;
   line-height: 16px;

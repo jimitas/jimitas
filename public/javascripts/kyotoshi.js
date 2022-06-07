@@ -41,6 +41,7 @@ function TBL_set() {
           td.style.width = "110px";
           break;
         case 3:
+          td.style.width = "100px";
           td.classList.add("droppable-elem");
           td.style.border = "solid 1px #333";
           const div = document.createElement("div");
