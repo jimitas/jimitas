@@ -6,28 +6,6 @@ function noScroll(event) {
 document.oncontextmenu = () => {
   return false;
 };
-//スワイプ禁止
-// document.addEventListener(
-//   "touchmove",
-//   (event) => {
-//     event.preventDefault();
-//   },
-//   { passive: false }
-// );
-// ピンチズーム禁止
-// const touchHandler = (event) => {
-//   if (event.touches.length > 1) {
-//     event.preventDefault();
-//   }
-// };
-// document.addEventListener("touchstart", touchHandler, {
-//   passive: false,
-// });
-
-// スクロール禁止(SP)
-// document.addEventListener("touchmove", noScroll, { passive: false });
-// スクロール禁止(PC)
-// document.addEventListener("mousewheel", noScroll, { passive: false });
 
 //ダブルタップによる拡大禁止
 document.addEventListener(
@@ -73,3 +51,26 @@ document.getElementById("font_select").addEventListener("change", (event) => {
 function f_end() {
   console.log("end");
 }
+
+//スワイプ禁止
+// document.addEventListener(
+//   "touchmove",
+//   (event) => {
+//     event.preventDefault();
+//   },
+//   { passive: false }
+// );
+// ピンチズーム禁止
+// const touchHandler = (event) => {
+//   if (event.touches.length > 1) {
+//     event.preventDefault();
+//   }
+// };
+// document.addEventListener("touchstart", touchHandler, {
+//   passive: false,
+// });
+
+// スクロール禁止(SP)
+// document.addEventListener("touchmove", noScroll, { passive: false });
+// スクロール禁止(PC)
+// document.addEventListener("mousewheel", noScroll, { passive: false });
