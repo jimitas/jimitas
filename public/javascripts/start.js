@@ -14,15 +14,16 @@ document.oncontextmenu = () => {
 //   },
 //   { passive: false }
 // );
-ピンチズーム禁止
-const touchHandler = (event) => {
-  if (event.touches.length > 1) {
-    event.preventDefault();
-  }
-};
-document.addEventListener("touchstart", touchHandler, {
-  passive: false,
-});
+// ピンチズーム禁止
+// const touchHandler = (event) => {
+//   if (event.touches.length > 1) {
+//     event.preventDefault();
+//   }
+// };
+// document.addEventListener("touchstart", touchHandler, {
+//   passive: false,
+// });
+
 // スクロール禁止(SP)
 // document.addEventListener("touchmove", noScroll, { passive: false });
 // スクロール禁止(PC)
