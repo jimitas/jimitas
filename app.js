@@ -5,8 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const app = express();
 
-
-const { auth } = require('express-openid-connect');
+// const { auth } = require('express-openid-connect');
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -31,10 +30,6 @@ const recorder_1Router = require("./routes/recorder_1");
 const recorder_2Router = require("./routes/recorder_2");
 const romajiRouter = require("./routes/romaji");
 
-const port = proccss.env.PORT || 3000;
-app.listenerCount(port,()=>{
-  
-})
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -70,17 +65,16 @@ app.use("/recorder_2", recorder_2Router);
 app.use("/romaji", romajiRouter);
 app.use("/users", usersRouter);
 
-app.use(
-  auth({
-    issuerBaseURL: process.env.ISSUER_BASE_URL,
-    baseURL: process.env.BASE_URL,
-    clientID: process.env.CLIENT_ID,
-    secret:process.env.SERCRET ,
-    idpLogout: true,
-  })
-);
-
-
+// app.use(
+//   auth({
+//     authRequired:false,
+//     auth0Logout:true,
+//     issuerBaseURL: process.env.ISSUER_BASE_URL,
+//     baseURL: process.env.BASE_URL,
+//     clientID: process.env.CLIENT_ID,
+//     secret:process.env.SECRET ,
+//   })
+// );
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
