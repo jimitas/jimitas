@@ -69,7 +69,8 @@ const { auth } = require("express-openid-connect");
 const config = {
   authRequired: false,
   auth0Logout: true,
-  baseURL: "http://localhost:3000",
+  baseURL: "https://jimitas.herokuapp.com/",
+  // baseURL: "http://localhost:3000",
   clientID: "35S53ryfsAGCw5B4jyuDcGZ4Jwsx5eYt",
   issuerBaseURL: "https://restless-bread-6916.us.auth0.com",
   secret: "2PrdrIbYuFhw6IeR-YqUxSPfSM1we9IAbI0Drym8KHneUhKgfnoOpxxnbGagoEBI",
