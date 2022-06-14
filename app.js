@@ -5,8 +5,6 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const app = express();
 
-// const { auth } = require('express-openid-connect');
-
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const blocksRouter = require("./routes/blocks");
@@ -65,16 +63,25 @@ app.use("/recorder_2", recorder_2Router);
 app.use("/romaji", romajiRouter);
 app.use("/users", usersRouter);
 
-// app.use(
-//   auth({
-//     authRequired:false,
-//     auth0Logout:true,
-//     issuerBaseURL: process.env.ISSUER_BASE_URL,
-//     baseURL: process.env.BASE_URL,
-//     clientID: process.env.CLIENT_ID,
-//     secret:process.env.SECRET ,
-//   })
-// );
+//認証周り
+const { auth } = require("express-openid-connect");
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  baseURL: "http://localhost:3000",
+  clientID: "35S53ryfsAGCw5B4jyuDcGZ4Jwsx5eYt",
+  issuerBaseURL: "https://restless-bread-6916.us.auth0.com",
+  secret: "2PrdrIbYuFhw6IeR-YqUxSPfSM1we9IAbI0Drym8KHneUhKgfnoOpxxnbGagoEBI",
+};
+
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
+// req.isAuthenticated is provided from the auth router
+// app.get("/", (req, res) => {
+//   res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
+// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
