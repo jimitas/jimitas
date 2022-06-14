@@ -66,6 +66,7 @@ app.use("/users", usersRouter);
 //認証周り
 const { auth } = require("express-openid-connect");
 
+
 const config = {
   authRequired: false,
   auth0Logout: true,
