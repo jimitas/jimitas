@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("../_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("../_share/stylesheets.ejs") %>
+</head>
+
+<body>
+  <!-- header -->
+  <%- include("../_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container">
+        <table class="table">
+          <% for(var i in content) { %>
+            <tr>
+              <% var obj=content[i]; %>
+                <th>
+                  <%= obj.id %>
+                </th>
+                <td>
+                  <%= obj.name %>
+                </td>
+                <td>
+                  <%= obj.pass %>
+                </td>
+                <td>
+                  <%= obj.level %>
+                </td>
+                <td>
+                  <%= obj.point %>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+      </main>
+      <%- include("../_share/footer.ejs") %>
+    </div>
+</body>

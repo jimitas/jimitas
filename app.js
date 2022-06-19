@@ -1,12 +1,20 @@
 const createError = require("http-errors");
 const express = require("express");
+const app = express();
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const app = express();
-
+const session = require("express-session");
+const ses_opt = {
+  secret: "my secret", //本番環境ではわかりにくいキーを設定すること
+  resave: false, //trueにするとsessionに変更がなくても強制的に保存　通常false
+  saveUninitialized: false, //trueにすると初期はされていなくても保存 通常false
+  cookie: { maxAge: 60 * 60 * 1000 }, //cookieの寿命　単位はミリ秒
+};
+app.use(session(ses_opt));
 const usersRouter = require("./routes/users");
 const indexRouter = require("./routes/index");
+
 const blocksRouter = require("./routes/blocks");
 const hikizan_1Router = require("./routes/hikizan_1");
 const hiragana_1Router = require("./routes/hiragana_1");
@@ -33,6 +41,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.disable("x-powered-by");
 
+app.use(session(ses_opt));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

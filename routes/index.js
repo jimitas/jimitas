@@ -1,13 +1,19 @@
 var express = require("express");
 var router = express.Router();
-const db = require("../models/index");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  var data = {
-    title: "Top",
-    datas: null,
-  };
+  if (req.session.login == null) {
+    var data = {
+      title: "top",
+      datas: null,
+    };
+  } else {
+    var data = {
+      title: "top",
+      datas: req.session.login,
+    };
+  }
   res.render("index", data);
 });
 
