@@ -2,16 +2,6 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models/index");
 /* GET users listing. */
-router.get("/", (req, res, next) => {
-  db.User.findAll().then((usrs) => {
-    var data = {
-      title: "Users/Index",
-      content: usrs,
-    };
-    res.render("users", data);
-  });
-});
-
 router.get("/login", (req, res, next) => {
   var data = {
     title: "ログイン　がめん",
@@ -19,6 +9,18 @@ router.get("/login", (req, res, next) => {
   };
   res.render("users/login", data);
 });
+
+
+// router.get("/", function (req, res, next) {
+//   db.user_data.findAll().then((usrs) => {
+//     var data = {
+//       title: "Top",
+//       datas: usrs,
+//     };
+//     res.render("index", data);
+//   });
+// });
+
 
 router.post("/login", (req, res, next) => {
   db.User.findOne({
@@ -45,7 +47,6 @@ router.post("/login", (req, res, next) => {
 });
 
 router.get("/add", (req, res, next) => {
-  set.play();
   var data = {
     title: "あたらしい　ユーザーを　つくる",
     content: "ユーザーID(アイディ)と　パスワードを　きめてください。（アルファベットか　すうじが　つかえます。）",

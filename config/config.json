@@ -1,17 +1,26 @@
 {
   "development": {
-    "database": "db-development",
-    "dialect": "sqlite",
-    "storage": "db-dev.sqlite3"
+    "username": "jimitas",
+    "password": "T&N3729SHI",
+    "database": "jimitas_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
   },
   "test": {
-    "database": "db-test",
-    "dialect": "sqlite",
-    "storage": "db-test.sqlite3"
+    "username": "jimitas",
+    "password": "T&N3729SHI",
+    "database": "jimitas_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
   },
   "production": {
-    "database": "db-product",
-    "dialect": "sqlite",
-    "storage": "db.sqlite3"
+    "username": "jimitas",
+    "password": "T&N3729SHI",
+    "database": "jimitas_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "operatorsAliases": false
   }
 }

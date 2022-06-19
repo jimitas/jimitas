@@ -1,11 +1,14 @@
 var express = require("express");
 var router = express.Router();
-const app = express();
-
+const db = require("../models/index");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Top" });
+  var data = {
+    title: "Top",
+    datas: null,
+  };
+  res.render("index", data);
 });
 
 module.exports = router;

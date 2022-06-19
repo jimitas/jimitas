@@ -54,24 +54,37 @@
       </div>
       <span style="flex: 1;"></span>
 
-      <!-- font_select -->
-      <div>
-        <select style="margin-right: 10px;" id="font_select" class="btn btn-primary">
-          <option value=0 style="font-family: 'UD Digi Kyokasho NK-B'; font-weight: bold">
-            教
-          </option>
-          <option value=1 style="font-family: MS 明朝; font-weight: bold">
-            明
-          </option>
-          <option value=2 style="font-family: 'メイリオ,ヒラギノ角ゴ'; font-weight: bold">
-            ゴ
-          </option>
-        </select>
-      </div>
-      <!-- UD -->
-      <button id="UD" style="margin-right: 10px;" type="button" class="btn btn-dark">A</button>
-      <a style="margin-right: 10px;" class="btn btn-outline-light my-2 my-sm-0 mr-2" href="/users/login">ログイン</a>
-      <a style="margin-right: 10px;" class="btn btn-outline-light my-2 my-sm-0 mr-2" href="/users/add">新規登録</a>
+      <% if (datas) { %>
+        <span style="display: flex;color:white;">
+          <span>ID:<%=datas.name %>　</span>
+          <span>Lv:<%=datas.level %>　</span>
+          <span>Pt:<%=datas.point %>　</span>
+        </span>
+        <% } else { %>
+          <span style="display: flex;color:white;">
+            ログインしていません。
+          </span>
+          <a style="margin-right: 10px;" class="btn btn-outline-light my-2 my-sm-0 mr-2" href="/users/login">ログイン</a>
+          <a style="margin-right: 10px;" class="btn btn-outline-light my-2 my-sm-0 mr-2" href="/users/add">新規登録</a>
+          <% } %>
+
+            <!-- font_select -->
+            <div>
+              <select style="margin-right: 10px;" id="font_select" class="btn btn-primary">
+                <option value=0 style="font-family: 'UD Digi Kyokasho NK-B'; font-weight: bold">
+                  教
+                </option>
+                <option value=1 style="font-family: MS 明朝; font-weight: bold">
+                  明
+                </option>
+                <option value=2 style="font-family: 'メイリオ,ヒラギノ角ゴ'; font-weight: bold">
+                  ゴ
+                </option>
+              </select>
+            </div>
+            <!-- UD -->
+            <button id="UD" style="margin-right: 10px;" type="button" class="btn btn-dark">A</button>
+
     </div>
   </div>
 </nav>

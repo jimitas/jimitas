@@ -2,12 +2,12 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Users', [
+    return queryInterface.bulkInsert('user_data', [
       {
         name: 'Taro',
         pass: 'yamada',
         level:0,
-        exp:0,
+        point:0,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -15,7 +15,7 @@ module.exports = {
         name: 'Hanako',
         pass: 'flower',
         level:0,
-        exp:0,
+        point:0,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -23,7 +23,7 @@ module.exports = {
         name: 'Jiro',
         pass: 'change',
         level:0,
-        exp:0,
+        point:0,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -31,7 +31,7 @@ module.exports = {
         name: 'Sachiko',
         pass: 'happy',
         level:0,
-        exp:0,
+        point:0,
         createdAt: new Date(),
         updatedAt: new Date()
       }
@@ -39,6 +39,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Users', null, {});
+    return queryInterface.bulkDelete('user_data', null, {});
   }
 };

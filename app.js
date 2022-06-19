@@ -3,25 +3,10 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const session = require("express-session");
-var session_opt = {
-  secret: "keyboard cat",
-  resave: false,
-  saveUninitialized: false,
-  cookie: { maxAge: 60 * 60 * 1000 },
-};
 const app = express();
 
-// const mysql = require('mysql2');
-// var connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'jimitas',
-//   password: 'T&N3729SHI', // mysqlの自分のパスワード
-//   database: 'jimitas' // db名は自分で自由に作った名前を当てはめる
-// });
-
-const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const indexRouter = require("./routes/index");
 const blocksRouter = require("./routes/blocks");
 const hikizan_1Router = require("./routes/hikizan_1");
 const hiragana_1Router = require("./routes/hiragana_1");
@@ -43,7 +28,6 @@ const recorder_1Router = require("./routes/recorder_1");
 const recorder_2Router = require("./routes/recorder_2");
 const romajiRouter = require("./routes/romaji");
 
-app.use(session(session_opt));
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -80,17 +64,6 @@ app.use("/tokei", tokeiRouter);
 app.use("/recorder_1", recorder_1Router);
 app.use("/recorder_2", recorder_2Router);
 app.use("/romaji", romajiRouter);
-app.use("/users", usersRouter);
-
-
-// app.post("/", function (req, res, next) {
-//   // console.log("hoge");
-//   // const name = res.body.username;
-//   // const pass = res.body.password;
-//   // console.log(name, pass);
-
-//   res.render("index", { title: "Top" });
-// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
