@@ -8,6 +8,7 @@ router.get("/", function (req, res, next) {
     var data = {
       title: "Users",
       content: usrs,
+      datas: null,
     };
     res.render("users/index", data);
   });
@@ -17,6 +18,7 @@ router.get("/login", (req, res, next) => {
   var data = {
     title: "ログイン　がめん",
     content: "ユーザーID(アイディ)と　パスワードを いれてね。",
+    datas: null,
   };
   res.render("users/login", data);
 });
@@ -41,6 +43,7 @@ router.post("/login", (req, res, next) => {
         var data = {
           title: "ログイン　がめん",
           content: "ユーザーID(アイディ)か　パスワードが　まちがっているよ。",
+          datas: null,
         };
         res.render("users/login", data);
       }
