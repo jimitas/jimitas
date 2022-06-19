@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("../_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("../_share/stylesheets.ejs") %>
+</head>
+
+<body>
+  <!-- header -->
+  <%- include("../_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-3 text-center text-danger">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container">
+        <p>
+          <%- content %>
+        </p>
+        <ol class="text-danger">
+          <% if (err!=null) { for (let i in err.errors) { %>
+            <li>
+              <%= err.errors[i].message %>
+            </li>
+            <% }} %>
+        </ol>
+        <form method="post" action="/users/add">
+          <div class="form-group">
+            <label for="name">ユーザーID(アイディ)</label>
+            <input type="text" name="name" id="name" value="<%=form.name %>" class="form-control">
+            <ul class="text-danger">
+              <% if (err!=null) { for (let i in err.get("name")) { %>
+                <li>
+                  <%= err.get("name")[i].message %>
+                </li>
+                <% }} %>
+            </ul>
+          </div>
+          <div class="form-group">
+            <label for="pass">パスワード</label>
+            <input type=" password" name="pass" id="pass" value="<%=form.pass %>" class="form-control">
+            <ul class="text-danger">
+              <% if (err!=null) { for (let i in err.get("pass")) { %>
+                <li>
+                  <%= err.get("pass")[i].message %>
+                </li>
+                <% }} %>
+            </ul>
+          </div>
+          <input type="submit" value="つくる" class="btn btn-primary">
+        </form>
+      </main>
+      <%- include("../_share/footer.ejs") %>
+    </div>
+</body>
+
+</html>

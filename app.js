@@ -3,7 +3,22 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const session = require("express-session");
+var session_opt = {
+  secret: "keyboard cat",
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 60 * 60 * 1000 },
+};
 const app = express();
+
+// const mysql = require('mysql2');
+// var connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'jimitas',
+//   password: 'T&N3729SHI', // mysqlの自分のパスワード
+//   database: 'jimitas' // db名は自分で自由に作った名前を当てはめる
+// });
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
@@ -28,6 +43,7 @@ const recorder_1Router = require("./routes/recorder_1");
 const recorder_2Router = require("./routes/recorder_2");
 const romajiRouter = require("./routes/romaji");
 
+app.use(session(session_opt));
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -41,6 +57,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //Dynamic resource rooting
 app.use("/", indexRouter);
+app.use("/users", usersRouter);
+
+// ---------------------
 app.use("/blocks", blocksRouter);
 app.use("/hikizan_1", hikizan_1Router);
 app.use("/hiragana_1", hiragana_1Router);
@@ -63,25 +82,14 @@ app.use("/recorder_2", recorder_2Router);
 app.use("/romaji", romajiRouter);
 app.use("/users", usersRouter);
 
-//認証周り
-const { auth } = require("express-openid-connect");
 
-const config = {
-  authRequired: false,
-  auth0Logout: true,
-  baseURL: "https://jimitas.herokuapp.com",
-  // baseURL: "http://localhost:3000",
-  clientID: "35S53ryfsAGCw5B4jyuDcGZ4Jwsx5eYt",
-  issuerBaseURL: "https://restless-bread-6916.us.auth0.com",
-  secret: "2PrdrIbYuFhw6IeR-YqUxSPfSM1we9IAbI0Drym8KHneUhKgfnoOpxxnbGagoEBI",
-};
+// app.post("/", function (req, res, next) {
+//   // console.log("hoge");
+//   // const name = res.body.username;
+//   // const pass = res.body.password;
+//   // console.log(name, pass);
 
-// auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config));
-
-// req.isAuthenticated is provided from the auth router
-// app.get("/", (req, res) => {
-//   res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
+//   res.render("index", { title: "Top" });
 // });
 
 // catch 404 and forward to error handler
