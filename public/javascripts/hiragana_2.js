@@ -2,7 +2,7 @@ set.play();
 scoreWright();
 flag = false;
 const hiragana_data_1 = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもや　ゆ　よらりるれろわ　を　ん";
-const hiragana_data_2 = "がぎぐげござじすぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょっ";
+const hiragana_data_2 = "がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょっ";
 const moji_togle = document.getElementById("moji_togle");
 const TBL_hiragana_1 = document.getElementById("TBL_hiragana_1");
 
