@@ -24,6 +24,7 @@ function init() {
   kasu = "?";
   answer = "?";
   response = "?";
+  showScore();
   write();
   document.getElementById("message").innerText = "スタートをおしてね。";
 }
@@ -49,6 +50,16 @@ function countStop() {
     clearInterval(timerVariable);
     flag = false;
   }
+}
+// つぎへボタンを押したときの処理
+function next_send() {
+  if (score > 20) retuen;
+  if (score == 20) send_end();
+  kotae.innerText = answer;
+  set.play();
+  setTimeout(question, 1000);
+  score++;
+  document.getElementById("score-point").innerText = score+"　もんめ";
 }
 
 // 問題を出す
