@@ -3,7 +3,7 @@ html,
 body {
   height: 100%;
   font-weight: 600;
-  font-family: "UD Digi Kyokasho N-B,游ゴシック体";
+  font-family: "UD Digi Kyokasho N-B";
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -363,7 +363,8 @@ img {
 }
 
 #flush_card {
-  height: 280px;
+  width: 1000px;
+  height: 240px;
   text-align: center;
   vertical-align: middle;
   font-size: 160px;
