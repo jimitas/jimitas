@@ -66,8 +66,8 @@ function next_send() {
   if (score == 20) send_end();
   if (flag_res === true) {
     flag_res = false;
-    document.getElementById("flush_card").style.border = "solid 5px red";
     kotae.innerText = answer;
+    document.getElementById("flush_card").style.border = "solid 5px red";
     set.play();
     setTimeout(question, 1000);
     score++;
@@ -81,59 +81,45 @@ function question() {
   //モードによって式を変える
   switch (form_select.value) {
     case "1":
-      answer = Math.floor(Math.random() * 10 + 1);
-      higensu = Math.floor(Math.random() * answer + 1);
-      gensu = answer - higensu;
+      higensu = Math.floor(Math.random() * 10 + 1);
+      gensu = Math.floor(Math.random() * higensu + 1);
       break;
-      case "2":
-        answer = Math.floor(Math.random() * 10 + 11);
-        var mode = Math.floor(Math.random() * 2 + 1);
-        if (mode === 1) {
-          higensu = 10;
-          gensu = answer - higensu;
-        } else if (mode === 2) {
-          gensu = 10;
-          higensu = answer - gensu;
-        }
-        break;
-        case "3":
-          answer = Math.floor(Math.random() * 9 + 12);
-          var mode = Math.floor(Math.random() * 2 + 1);
-          if (mode === 1) {
-        higensu = Math.floor(Math.random() * (answer - 11) + 1);
-        gensu = answer - higensu;
-      } else if (mode === 2) {
-        gensu = Math.floor(Math.random() * (answer - 11) + 1);
-        higensu = answer - gensu;
-      }
+    case "2":
+      higensu = 10;
+      gensu = Math.floor(Math.random() * higensu + 1);
       break;
-      case "4":
-        higensu = Math.floor(Math.random() * 9 + 2);
-        gensu = Math.floor(Math.random() * higensu + (10 - higensu) + 1);
-        answer = Math.floor(higensu) + Math.floor(gensu);
-        break;
-      }
-      flag_res = true;
-      write();
-    }
-    
-    // 正解を送る
-    function send_right() {
-      document.getElementById("flush_card").style.border = "solid 5px red";
-      score++;
-      showScore();
-      if (score >= 20) {
-        flag_res = false;
-        send_end();
-        return;
-      }
-      right.play();
-      setTimeout(question, 500);
-    }
-    // 間違いを送る
-    function send_wrong() {
-      document.getElementById("flush_card").style.border = "solid 5px gray";
-      alert.play();
+    case "3":
+      higensu = Math.floor(Math.random() * 9 + 11);
+      gensu = Math.floor(Math.random() * (higensu - 11) + 1);
+      break;
+    case "4":
+      higensu = Math.floor(Math.random() * 9 + 11);
+      var ichi = 20 - higensu;
+      gensu = Math.floor(Math.random() * ichi + (10 - ichi));
+      break;
+  }
+  answer = Math.floor(higensu) - Math.floor(gensu);
+  flag_res = true;
+  write();
+}
+
+// 正解を送る
+function send_right() {
+  document.getElementById("flush_card").style.border = "solid 5px red";
+  score++;
+  showScore();
+  if (score >= 20) {
+    flag_res = false;
+    send_end();
+    return;
+  }
+  right.play();
+  setTimeout(question, 500);
+}
+// 間違いを送る
+function send_wrong() {
+  document.getElementById("flush_card").style.border = "solid 5px gray";
+  alert.play();
 }
 //終了を送る
 function send_end() {
