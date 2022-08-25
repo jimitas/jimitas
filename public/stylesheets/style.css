@@ -363,12 +363,11 @@ img {
 }
 
 #flush_card {
-  width: 820px;
   height: 280px;
   text-align: center;
   vertical-align: middle;
-  font-size: 200px;
-  background-color: #ff6c94;
+  font-size: 160px;
+  background-color: none;
   border: #333 1px solid;
 }
 
