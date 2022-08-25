@@ -37,7 +37,7 @@ document.getElementById("font_select").addEventListener("change", (event) => {
   reset.play();
   switch (event.target.value) {
     case "0":
-      document.body.style.fontFamily = "UD Digi Kyokasho N-B";
+      document.body.style.fontFamily = "UD Digi Kyokasho N-B,游ゴシック体";
       break;
     case "1":
       document.body.style.fontFamily = "ヒラギノ明朝 ProN W6, HiraMinProN-W6, HG明朝E, ＭＳ Ｐ明朝,MS PMincho, MS 明朝, serif";
