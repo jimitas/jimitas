@@ -32,6 +32,7 @@ function init() {
   showScore();
   write();
   document.getElementById("message").innerText = "スタートをおしてね。";
+  document.getElementById("message").style.backgroundColor = "lightpink";
   document.getElementById("flush_card").style.border = "solid 2px red";
 }
 
@@ -40,11 +41,17 @@ function countReset() {
   if (flag === false) {
     reset.play();
     init();
+  } else {
+    alert.play();
+    document.getElementById("message").innerText = "リセットしたいときはストップをおしてから。";
+    document.getElementById("message").style.backgroundColor = "lightpink";
   }
 }
 // スタートボタンを押したときの処理
 function countStart() {
   if (flag === false) {
+    document.getElementById("message").innerText = "スタート。";
+    document.getElementById("message").style.backgroundColor = "lightblue";
     set.play();
     flag = true;
     timerVariable = setInterval(countUpTimer, 1000);
@@ -53,6 +60,8 @@ function countStart() {
 }
 // ストップボタンを押したときの処理
 function countStop() {
+  document.getElementById("message").innerText = "ストップ。（リセットまたはスタート）";
+  document.getElementById("message").style.backgroundColor = "lightgray";
   document.getElementById("flush_card").style.border = "solid 2px gray";
   move2.play();
   if (flag === true) {
