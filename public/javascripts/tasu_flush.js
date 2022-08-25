@@ -12,6 +12,11 @@ const mid = document.getElementById("mid");
 const kotae = document.getElementById("kotae");
 init();
 
+function select_change() {
+  set.play();
+  init();
+}
+
 // 初期化
 function init() {
   flag = false;
@@ -27,18 +32,20 @@ function init() {
   showScore();
   write();
   document.getElementById("message").innerText = "スタートをおしてね。";
+  document.getElementById("flush_card").style.border = "solid 2px red";
 }
 
 // リセットボタンを押したときの処理
 function countReset() {
   if (flag === false) {
+    reset.play();
     init();
   }
 }
 // スタートボタンを押したときの処理
 function countStart() {
-  set.play();
   if (flag === false) {
+    set.play();
     flag = true;
     timerVariable = setInterval(countUpTimer, 1000);
     question();
@@ -46,6 +53,8 @@ function countStart() {
 }
 // ストップボタンを押したときの処理
 function countStop() {
+  document.getElementById("flush_card").style.border = "solid 2px gray";
+  move2.play();
   if (flag === true) {
     clearInterval(timerVariable);
     flag = false;
@@ -55,16 +64,20 @@ function countStop() {
 function next_send() {
   if (score > 20) retuen;
   if (score == 20) send_end();
-  kotae.innerText = answer;
-  set.play();
-  setTimeout(question, 1000);
-  score++;
-  document.getElementById("score-point").innerText = score+"　もんめ";
+  if (flag_res === true) {
+    flag_res = false;
+    kotae.innerText = answer;
+    set.play();
+    setTimeout(question, 1000);
+    score++;
+    document.getElementById("score-point").innerText = score + "　もんめ";
+  }
 }
 
 // 問題を出す
 function question() {
   response = "?";
+  document.getElementById("flush_card").style.border = "solid 5px blue";
   //モードによって式を変える
   switch (form_select.value) {
     case "1":
@@ -72,21 +85,21 @@ function question() {
       hikasu = Math.floor(Math.random() * answer + 1);
       kasu = answer - hikasu;
       break;
-    case "2":
-      answer = Math.floor(Math.random() * 10 + 11);
-      var mode = Math.floor(Math.random() * 2 + 1);
-      if (mode === 1) {
-        hikasu = 10;
-        kasu = answer - hikasu;
-      } else if (mode === 2) {
-        kasu = 10;
-        hikasu = answer - kasu;
-      }
-      break;
-    case "3":
-      answer = Math.floor(Math.random() * 9 + 12);
-      var mode = Math.floor(Math.random() * 2 + 1);
-      if (mode === 1) {
+      case "2":
+        answer = Math.floor(Math.random() * 10 + 11);
+        var mode = Math.floor(Math.random() * 2 + 1);
+        if (mode === 1) {
+          hikasu = 10;
+          kasu = answer - hikasu;
+        } else if (mode === 2) {
+          kasu = 10;
+          hikasu = answer - kasu;
+        }
+        break;
+        case "3":
+          answer = Math.floor(Math.random() * 9 + 12);
+          var mode = Math.floor(Math.random() * 2 + 1);
+          if (mode === 1) {
         hikasu = Math.floor(Math.random() * (answer - 11) + 1);
         kasu = answer - hikasu;
       } else if (mode === 2) {
@@ -94,31 +107,33 @@ function question() {
         hikasu = answer - kasu;
       }
       break;
-    case "4":
-      hikasu = Math.floor(Math.random() * 9 + 2);
-      kasu = Math.floor(Math.random() * hikasu + (10 - hikasu) + 1);
-      answer = Math.floor(hikasu) + Math.floor(kasu);
-      break;
-  }
-  flag_res = true;
-  write();
-}
-
-// 正解を送る
-function send_right() {
-  score++;
-  showScore();
-  if (score >= 20) {
-    flag_res = false;
-    send_end();
-    return;
-  }
-  right.play();
-  setTimeout(question, 500);
-}
-// 間違いを送る
-function send_wrong() {
-  alert.play();
+      case "4":
+        hikasu = Math.floor(Math.random() * 9 + 2);
+        kasu = Math.floor(Math.random() * hikasu + (10 - hikasu) + 1);
+        answer = Math.floor(hikasu) + Math.floor(kasu);
+        break;
+      }
+      flag_res = true;
+      write();
+    }
+    
+    // 正解を送る
+    function send_right() {
+      document.getElementById("flush_card").style.border = "solid 5px red";
+      score++;
+      showScore();
+      if (score >= 20) {
+        flag_res = false;
+        send_end();
+        return;
+      }
+      right.play();
+      setTimeout(question, 500);
+    }
+    // 間違いを送る
+    function send_wrong() {
+      document.getElementById("flush_card").style.border = "solid 5px gray";
+      alert.play();
 }
 //終了を送る
 function send_end() {

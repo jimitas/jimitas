@@ -19,7 +19,7 @@
         <h3 id="message" class="my-2 text-center"></h3>
         <div class="mx-auto">
           <div class="d-flex justify-content-center mr-5">
-            <select onchange="init()" id="form-select" style="width:25vw" class="form-select bg-light mb-2 mx-2">
+            <select onchange="select_change()" id="form-select" style="width:25vw" class="form-select bg-light mb-2 mx-2">
               <option value="1" checked>10までのかず</option>
               <option value="2" checked>10＋□，□＋10</option>
               <option value="3" checked>１□＋□，□＋１□</option>
@@ -42,13 +42,13 @@
           <div id="response" class="mt-1 text-center" role="group" aria-label="Basic example">
             <div class="mb-1">
               <% for (var i=0; i < 11; i++) { %>
-                <button onclick="res(event)" ontouchstart="res(event)" class="btn btn-secondary m-1">
+                <button onclick="res(event)" ontouchstart="res(event)" style="width:54px;height: 48px;font-size: 24px;" class="btn btn-secondary m-1">
                   <%= i %>
                 </button>
                 <% } %>
                   <br>
                   <% for (var i=11; i < 21; i++) { %>
-                    <button onclick="res(event)" ontouchstart="res(event)" class="btn btn-secondary m-1">
+                    <button onclick="res(event)" ontouchstart="res(event)" style="width:60px;height: 48px;font-size: 24px;" class="btn btn-secondary m-1">
                       <%= i %>
                     </button>
                     <% } %>
@@ -57,7 +57,7 @@
           <div class="mt-1" style="display:flex;justify-content: right;">
             <div class="mx-2" id="score-point"></div>
             <div>
-              <button id="next" onclick="next_send()" class="btn btn-success">つぎ</button>
+              <button id="next" onclick="next_send()" ontouchstart="next_start()" class="btn btn-success">つぎ</button>
             </div>
           </div>
         </div>
