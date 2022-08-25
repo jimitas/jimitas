@@ -70,7 +70,6 @@ function next_send() {
     kotae.innerText = answer;
     set.play();
     setTimeout(question, 1000);
-    score++;
   }
 }
 

@@ -70,7 +70,6 @@ function next_send() {
     document.getElementById("flush_card").style.border = "solid 5px red";
     set.play();
     setTimeout(question, 1000);
-    score++;
   }
 }
 
