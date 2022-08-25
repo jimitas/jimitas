@@ -42,13 +42,13 @@
           <div id="response" class="mt-1 text-center" role="group" aria-label="Basic example">
             <div class="mb-1">
               <% for (var i=0; i < 11; i++) { %>
-                <button onclick="res(event)" class="btn btn-secondary m-1">
+                <button onclick="res(event)" ontouchstart="res(event)" class="btn btn-secondary m-1">
                   <%= i %>
                 </button>
                 <% } %>
                   <br>
                   <% for (var i=11; i < 21; i++) { %>
-                    <button onclick="res(event)" class="btn btn-secondary m-1">
+                    <button onclick="res(event)" ontouchstart="res(event)" class="btn btn-secondary m-1">
                       <%= i %>
                     </button>
                     <% } %>
