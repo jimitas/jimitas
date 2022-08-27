@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="my-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main" class="container ">
+        <div id="piano" class="d-flex justify-content-center">
+          tempo=<span id="range">84　</span>
+          <input type="range" value="84" max="300" min="10" step="1" id="tempo" style="max-width:100%;width:600px;cursor: pointer;">
+        </div>
+        <div class="mt-3 text-center">ハ長調でよく使われる和音</div>
+        <div id="piano" class="d-flex justify-content-center">
+          <table class="table">
+            <tr>
+              <td><img src="./images/chord_C.png" alt="" srcset=""></td>
+              <td><img src="./images/chord_F.png" alt="" srcset=""></td>
+              <td><img src="./images/chord_G.png" alt="" srcset=""></td>
+              <td><img src="./images/chord_G7.png" alt="" srcset=""></td>
+            </tr>
+            <tr>
+              <td>
+                <div onclick="chord(1)" id="Key_C" class="w_key">１度の和音(C)</div>
+              </td>
+              <td>
+                <div onclick="chord(2)" id="Key_F" class="w_key">４度の和音(F)</div>
+              </td>
+              <td>
+                <div onclick="chord(3)" id="Key_G" class="w_key">５度の和音(G)</div>
+              </td>
+              <td>
+                <div onclick="chord(4)" id="Key_G7" class="w_key">５度の７の<br>和音(G7)</div>
+              </td>
+            </tr>
+          </table>
+          <button onclick="chord(9)" class="btn btn-danger">とめる</button>
+        </div>
+        <div class="mt-3 text-center">イ短調でよく使われる和音</div>
+        <div id="piano" class="d-flex justify-content-center">
+          <table class="table">
+            <tr>
+              <td><img src="./images/chord_Am.png" alt="" srcset=""></td>
+              <td><img src="./images/chord_Dm.png" alt="" srcset=""></td>
+              <td><img src="./images/chord_E.png" alt="" srcset=""></td>
+              <td><img src="./images/chord_E7.png" alt="" srcset=""></td>
+            </tr>
+            <tr>
+              <td>
+                <div onclick="chord(5)" id="Key_Am" class="w_key">１度の和音(Am)</div>
+              </td>
+              <td>
+                <div onclick="chord(6)" id="Key_Dm" class="w_key">４度の和音(Dm)</div>
+              </td>
+              <td>
+                <div onclick="chord(7)" id="Key_E" class="w_key">５度の和音(E)</div>
+              </td>
+              <td>
+                <div onclick="chord(8)" id="Key_E7" class="w_key">５度の７の<br>和音(E7)</div>
+              </td>
+            </tr>
+          </table>
+          <button onclick="chord(9)" class="btn btn-danger">とめる</button>
+        </div>
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.1.25/Tone.js"></script>
+      <script src="/javascripts/waon.js"></script>
+</body>
+
+</html>
