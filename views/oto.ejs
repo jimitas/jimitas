@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include("./_share/metadata.ejs") %>
+    <title>Jimitas</title>
+    <%- include("./_share/stylesheets.ejs") %>
+</head>
+
+<body oncontextmenu='return false;'>
+  <!-- header -->
+  <%- include("./_share/navbar.ejs") %>
+    <div class="outerframe">
+      <h1 class="mt-3 text-center">
+        <%= title %>
+      </h1>
+      <!-- main -->
+      <main role="main">
+        <div class="container">
+          <p>3年理科「音のふしぎ」で続けて同じ音を出すときなどに使えます。(USBスピーカーに接続して音を大きくします。)</p>
+          <p>大きな音が出ないように注意してください。</p>
+          <select class="select" name="" id="select">
+            <option value="sine">sine</option>
+            <option value="square">square</option>
+            <option value="sawtooth">sawtooth</option>
+            <option value="triangle">triangle</option>
+          </select>
+          <input type="range" value="440" max="2000" min="10" step="1" id="hz" style="max-width:100%;width:600px;cursor: pointer;"><br>
+          <div id="hz_label">440Hz</div>
+          <button class="btn btn-primary m-1" onclick="setHz(522)" style="cursor:pointer;">ド</button>
+          <button class="btn btn-primary m-1" onclick="setHz(588)" style="cursor:pointer;">レ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(660)" style="cursor:pointer;">ミ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(698)" style="cursor:pointer;">ファ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(784)" style="cursor:pointer;">ソ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(880)" style="cursor:pointer;">ラ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(988)" style="cursor:pointer;">シ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(1044)" style="cursor:pointer;">ド</button>
+          <br>
+          <button class="btn btn-primary m-1" onclick="setHz(261)" style="cursor:pointer;">ド</button>
+          <button class="btn btn-primary m-1" onclick="setHz(294)" style="cursor:pointer;">レ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(330)" style="cursor:pointer;">ミ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(349)" style="cursor:pointer;">ファ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(392)" style="cursor:pointer;">ソ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(440)" style="cursor:pointer;">ラ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(494)" style="cursor:pointer;">シ</button>
+          <button class="btn btn-primary m-1" onclick="setHz(522)" style="cursor:pointer;">ド</button>
+          <br>
+          <button class="btn btn-success m-1" onclick="" style="cursor:pointer;" id="play">音を鳴らす</button>
+          <button class="btn btn-danger m-1" onclick="" style="cursor:pointer;" id="stop">音を止める</button>
+          <br>
+        </div>
+      </main>
+      <%- include("./_share/footer.ejs") %>
+    </div>
+    <%- include("./_share/javascripts.ejs") %>
+    <!-- howler.jsの読み込み -->
+    <script src="/javascripts/howler.min.js"></script>
+      <script src="/javascripts/oto.js"></script>
+</body>
+
+</html>

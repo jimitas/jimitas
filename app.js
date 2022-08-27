@@ -37,6 +37,7 @@ const recorder_2Router = require("./routes/recorder_2");
 const romajiRouter = require("./routes/romaji");
 const tasu_flushRouter = require("./routes/tasu_flush.js");
 const hiku_flushRouter = require("./routes/hiku_flush.js");
+const otoRouter = require("./routes/oto.js");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -77,6 +78,7 @@ app.use("/recorder_2", recorder_2Router);
 app.use("/romaji", romajiRouter);
 app.use("/tasu_flush",tasu_flushRouter);
 app.use("/hiku_flush",hiku_flushRouter);
+app.use("/oto",otoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
