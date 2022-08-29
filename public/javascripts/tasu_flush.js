@@ -7,6 +7,7 @@ var totalSeconds = 0;
 var srore = 0;
 var flag = false;
 var flag_res = false;
+var flag_mode = false;
 const left = document.getElementById("left");
 const mid = document.getElementById("mid");
 const kotae = document.getElementById("kotae");
@@ -21,6 +22,7 @@ function select_change() {
 function init() {
   flag = false;
   flag_res = false;
+  flag_mode = false;
   clearInterval(timerVariable);
   totalSeconds = 0;
   score = 0;
@@ -47,10 +49,29 @@ function countReset() {
     document.getElementById("message").style.backgroundColor = "lightpink";
   }
 }
+
+function mode_change() {
+  if (mode_a.checked === true && flag_mode === false) {
+    set.play();
+    document.getElementById("message").innerText = "20もんチャレンジ";
+  } else if (mode_b.checked === true && flag_mode === false) {
+    set.play();
+    document.getElementById("message").innerText = "２ふんかんチャレンジ";
+  }
+}
+
 // スタートボタンを押したときの処理
 function countStart() {
   if (flag === false) {
-    document.getElementById("message").innerText = "スタート。";
+    if (mode_a.checked === true && flag_mode === false) {
+      document.getElementById("message").innerText = "20もんチャレンジ　スタート。";
+      flag_mode = "mode_a";
+    } else if (mode_b.checked === true && flag_mode === false) {
+      document.getElementById("message").innerText = "２ふんかんチャレンジ　スタート。";
+      flag_mode = "mode_b";
+    } else {
+      document.getElementById("message").innerText = "スタート。";
+    }
     document.getElementById("message").style.backgroundColor = "lightblue";
     set.play();
     flag = true;
@@ -130,7 +151,7 @@ function send_right() {
   document.getElementById("flush_card").style.border = "solid 5px red";
   score++;
   showScore();
-  if (score >= 20) {
+  if (flag_mode == "mode_a" && score >= 20) {
     flag_res = false;
     send_end();
     return;
@@ -178,6 +199,11 @@ function showTime() {
   var minute = Math.floor(totalSeconds / 60);
   var seconds = totalSeconds % 60;
   document.getElementById("count_up_timer").innerHTML = minute + "ふん" + seconds + "びょう";
+  if (flag_mode == "mode_b" && totalSeconds >= 120) {
+    flag_res = false;
+    send_end();
+    return;
+  }
 }
 // 問題を更新する
 function write() {

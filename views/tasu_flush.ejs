@@ -19,7 +19,11 @@
         <h3 id="message" class="my-2 text-center"></h3>
         <div class="mx-auto">
           <div class="d-flex justify-content-center mr-5">
-            <select onchange="select_change()" id="form-select" style="width:25vw" class="form-select bg-light mb-2 mx-2">
+            <form onchange="mode_change()" id="mode">
+              <label for="mode"><input type="radio" name="mode" id="mode_a" checked>20もん</label>
+              <label for="mode"><input type="radio" name="mode" id="mode_b">2ふん</label>
+            </form>
+            <select onchange="select_change()" id="form-select" style="width:20vw" class="form-select bg-light mb-2 mx-2">
               <option value="1" checked>10までのかず</option>
               <option value="2" checked>10＋□，□＋10</option>
               <option value="3" checked>１□＋□，□＋１□</option>
